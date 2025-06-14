@@ -236,16 +236,16 @@ wave {
     background-position-y: bottom;
 }
 .miscwave {
-    background-image: url(/res/wave-backgrounds/wavebg.svg);
+    background-image: url(/../res/wave-backgrounds/wavebg.svg);
 }
 .thumbwave {
-    background-image: url(/res/wave-backgrounds/wavethumbnail.svg);
+    background-image: url(../res/wave-backgrounds/wavethumbnail.svg);
 }
 .transwave {
-    background-image: url(/res/wave-backgrounds/wave-mographs.svg);
+    background-image: url(../res/wave-backgrounds/wave-mographs.svg);
 }
 .webwave {
-    background-image: url(/res/wave-backgrounds/waveweb.svg);
+    background-image: url(../res/wave-backgrounds/waveweb.svg);
 }
 
 .misc5 {
@@ -279,10 +279,6 @@ h1 {
     color: white;
     text-align: center;
     font-family: Montserrat
-}
-@font-face {
-    font-family: 'Montserat'; /*a name to be used later*/
-    src: url('/res/font/Montserrat-Bold.ttf'); /*URL to font*/
 }
 .trans1 {
     grid-column: 1;    
