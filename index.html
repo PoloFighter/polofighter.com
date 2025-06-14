@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html class="html">
+  <head>
+    <link rel="index" href="socials/social.html" />
+    <link rel="stylesheet" href="index.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@500&display=swap"
+      rel="stylesheet"
+    />
+    <title>Home page - PoloFighter</title>
+    <link rel="icon" type="image/x-icon" href="/res/images/PF LOGO halloween.png" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-compatible" content="ie-edge" />
+
+    <script defer src="index.js"></script>
+
+  </head>
+  <body>
+    <script defer src="/debuginfo.js"></script>
+    <di class="debuginfo"></di>
+    <div>
+        <div class="menu">
+          <a class="hbut one" href="about">About</a>
+          <a class="hbut two" href="portfolio">Portfolio</a>
+          <a class="hbut three" href="link">Links</a>
+          <a class="hbut four" href="dwn">Downloads</a>
+          <img src="/res/images/Moon.svg" class="logo" id="logo" />
+        </div>
+        <div class="bgoverlay"></div>
+        <div class="bg">
+          <video
+            class="video-container"
+            id="bg"
+            playsinline
+            autoplay
+            loop
+            muted
+          >
+            <source src="res/videos/bg.webm" type="video/webm" />
+          </video>
+          <div>
+            <style>
+              .backupbg {
+                position: fixed;
+                top: 50%;
+                left: 50%;
+                scale: 1;
+                transform: translate(-50%, -50%);
+                width: auto;
+                height: auto;
+                transition: all 0.01s ease-in-out;
+                min-width: 100%;
+                min-height: 100%;
+                background-image: linear-gradient(45deg, #fc3c61, #2d0f3d);
+                z-index: -7;
+              }
+            </style>
+            <div class="backupbg" id="backupbg"></div>
+          </div>
+          <!-- Backup Background -->
+        </div>
+        <div class="nadpis">
+          <h1 class="nadpistext" id="name">PoloFighter</h1>
+          <em class="desc">Graphic Design, Motion Graphics, VFX</em>
+        </div>
+    </body>
+</html>

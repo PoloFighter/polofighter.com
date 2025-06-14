@@ -1,0 +1,238 @@
+@import url('https://fonts.googleapis.com/css2?family=Afacad+Flux:wght@100..1000&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bowlby+One+SC&display=swap');
+.home {
+    width: 5vh;
+    align-self: center;
+    justify-self: center;
+    transition: all ease-in-out 100ms;
+    cursor: pointer;
+    padding: 25px;
+}
+.home:hover {
+    transform: scale(1.1)
+}
+body {
+    font-family: Afacad Flux;
+    overflow-x: hidden;
+    margin: 0px;
+    background: #161D6F;
+}
+.spacer1 {
+    aspect-ratio: 900/100;
+    width: 100vw;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+.layer1 {
+    background-image: url('../images/wave5.svg');
+}
+section {
+    display: flex;
+    background: linear-gradient(0deg,#0B2F9F 0%,#161D6F 100%);
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 100vw;
+    align-items: center;
+    justify-content: center;
+}
+label {
+    font-weight: 600;
+    font-size: 16pt;
+
+    padding-bottom: 10px;
+}
+.meno, .mail, .sprava {
+    display: flex;
+    flex-direction: column;
+    color: white;
+    font-size: 12pt;
+    margin: 25px;
+}
+input, textarea {
+    font-size: 12pt;
+    font-family: Afacad Flux;
+    background-color: rgba(255,255,255,0.5);
+    border: none;
+    outline: none;
+    padding: 8px;
+    border-radius: 10px;
+}
+form {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr 2fr 1fr;
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    width: 30vw; 
+    background-color: rgba(255,255,255,0.3);
+    border-radius: 25px;
+}
+.button > a {
+    background-color: #92ff6f;
+    text-align: center;
+    width: 6vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: black;
+    font-size: 16pt;
+    border-radius: 15px;
+    transition: 0.2s ease-in-out;
+}
+.button > a > h1 {
+    margin: 5%;
+    transition: 0.2s ease-in-out;
+
+}
+.button > a:hover {
+    background-color: #4d7440;
+    color: white;
+    border-radius: 40px;
+}
+:focus {
+    outline: none;
+}
+.meno {
+    grid-area: 1 / 1 / 2 / 2;
+}
+.mail {
+    grid-area: 1 / 2 / 2 / 3;
+}
+.sprava {
+    grid-area: 2 / 1 / 3 / 3;
+}
+.button {
+    grid-area: 3 / 1 / 4 / 3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+location {
+    display: flex;
+    flex-direction: column;
+    background-color: #C7FFD8;
+    width: 100vw;
+    align-items: center;
+    justify-content: center;
+}
+location > div {
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(255,255,255,0.5);
+    padding: 25px;
+    border-radius: 25px;
+}
+iframe {
+    width: 48vw;
+    border-radius: 10px;
+}
+.spacer2 {
+    aspect-ratio: 900/100;
+    width: 100vw;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+.layer2 {
+    background-image: url('../images/wave6.svg');
+}
+footer {
+    background-color: #004d44;
+    color: white;
+    padding: 5vh;
+}
+.wrapper1 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    align-items: center;
+    justify-content: center;
+}
+.collumn {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: left;
+}
+.collumn > div {
+    display: flex;
+    flex-direction: column;
+}
+
+.logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.logo > img {
+    width: 4vw;
+}
+.info {
+    display: flex;
+    flex-direction: column;
+}
+.jedna, .dva {
+    display: flex;
+    flex-direction: row;
+}
+a {
+    text-decoration: none;
+    color: greenyellow;
+}
+@media only screen and (max-width: 600px) {
+    form {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(4, auto);
+        grid-column-gap: 0px;
+        grid-row-gap: 0px; 
+        width: 90vw;
+    }
+    .meno {
+        font-size: 5vw;
+        margin: 5vw;
+    }
+    label {
+        font-size: 5vw;
+    }
+    input, textarea {
+        font-size: 5vw;
+    }
+    .meno {
+        grid-column: 1;
+        grid-row: 1;
+    }
+    .mail {
+        grid-row: 2;
+        grid-column: 1;
+    }
+    .sprava {
+        grid-column: 1;
+        grid-row: 3;
+    }
+    .button {
+        grid-column: 1;
+        grid-row: 4;
+    }
+    .button > a > h1 {
+        font-size: 10vw;
+    }
+    .button > a {
+        width: 50vw;
+        height: 25vw;
+        margin-bottom: 5vw;
+    }
+    .wrapper1 {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+    }
+    location > h1 {
+        text-align: center;
+        width: 80vw;
+    }
+}

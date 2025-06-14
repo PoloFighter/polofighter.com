@@ -1,0 +1,244 @@
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@font-face{font-family:monument extended;font-style:normal;font-weight:400;src:local('Monument Extended'),url(https://fonts.cdnfonts.com/s/19595/MonumentExtended-Regular.woff) format('woff')}
+@font-face{font-family:monument extended;font-style:normal;font-weight:800;src:local('Monument Extended'),url(https://fonts.cdnfonts.com/s/19595/MonumentExtended-Ultrabold.woff) format('woff')}
+.verright {
+  z-index: 5555555555555555;
+  bottom: 0;
+  right: 0;
+  position:fixed;
+  color: white;
+  font-size: 15px;
+  opacity: 0.5;
+  font-family: 'Inconsolata', monospace;
+}
+.video-container {
+  position: fixed;
+  overflow: hidden;
+  top: 50%;
+  left: 50%;
+  scale: 1;
+  transform: translate(-50%,-50%);
+  width: auto;
+  height: auto;
+  transition: all .01s ease-in-out; 
+  z-index: -5;
+  min-width: 100%; 
+  min-height: 100%; 
+}
+.left {
+  z-index: 5555555555555555;
+  bottom: 0;
+  left: 0;
+  position:fixed;
+  color: white;
+  font-size: 15px;
+  opacity: 0.5;
+  font-family: 'Inconsolata', monospace;
+  cursor: pointer;
+}
+.left:hover {
+  text-decoration-line:underline;
+  font-size: 16px;
+  color: blue;
+}
+.soc {
+  padding: 150px;
+  text-align: right;
+  display: flex;
+  flex-direction: column;
+  gap: 100px;
+  font-size: 6vw;
+  color: gainsboro;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+body {
+  overflow-x: hidden;
+  font-family: Montserrat;
+  font-weight: bold;
+}
+.logo {
+  float: right;
+  z-index: 1;
+  width: 110px;
+  position: fixed;
+  transition: all .1s ease-in-out; 
+  top: 0;
+  right: 0;
+  margin-top: 7px;
+  margin-right: 7px;
+  cursor: pointer;
+}
+.logo:hover {
+  transform: scale(1.1); 
+}
+.ttv {
+  grid-template-rows: 1;
+  transition: all .15s ease-in-out;
+  width: auto;
+  height: auto;
+  grid-column: 2;
+  grid-row: 1;
+  cursor: pointer;
+  z-index: 5;
+}
+.ttv:hover {
+  color: #9059f6;
+  transform: scale(1.1);  
+}
+.yt {
+  transition: all .15s ease-in-out;
+  width: auto;
+  height: auto;
+  grid-column: 2;
+  grid-row: 7;
+  cursor: pointer;
+  z-index: 5;
+}
+.yt:hover {
+  color: red;
+  scale: 1.1;
+}
+
+.ig {
+  grid-column: 2;
+  transition: all .15s ease-in-out;
+  cursor: pointer;
+}
+.ig:hover {
+  color: linear-gradient(90deg, rgba(255,248,0,1) 0%, rgba(255,0,0,1) 50%, rgba(144,0,255,1) 100%);
+  background: -webkit-linear-gradient(45deg, rgba(255,248,0,1) 0%, rgba(255,0,0,1) 50%, rgba(144,0,255,1) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  scale: 1.1;
+}
+.ig:hover .socbg {
+  opacity: 1;
+}
+.dc {
+  grid-column: 2;
+  transition: all .15s ease-in-out;
+  cursor: pointer;
+}
+.dc:hover {
+  color: rgb(88, 101, 242) ;
+  scale: 1.1;
+}
+.pp {
+  grid-column: 2;
+  transition: all .15s ease-in-out;
+  cursor: pointer;
+}
+.pp:hover {
+  color: linear-gradient(90deg, rgb(0, 48, 135) 0%, rgb(0, 156, 222) 100%);
+  background: -webkit-linear-gradient(45deg, rgb(0, 48, 135) 0%, rgb(0, 156, 222) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  scale: 1.1;
+}
+.ml {
+  grid-column: 2;
+  grid-row: 5;
+  transition: all .15s ease-in-out;
+  cursor: pointer;
+  justify-items: center;
+}
+.ml:hover {
+  color: #943d31;
+  transform:scale(1.2);
+}
+.mlc {
+  grid-column: 2;
+  grid-row: 6;
+  transition: all .15s ease-in-out;
+  cursor: pointer;
+  font-size: 20px;
+  margin-bottom: 210px;
+}
+.mlc:hover {
+  color: #943d31;
+  font-size: 30%;
+}
+.socbg {
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100vh;
+  width: 100vw;
+  z-index: -1;
+  margin-right: 130px;
+}
+.divider {
+  display: grid;
+  grid-template-columns: 4fr 1fr;
+  justify-items: left;
+}
+.twitchembed {
+  width: 50vw;
+  height: calc(50vw * 9 / 16);
+  position: fixed;
+  top: 50%;
+  left: 26%;
+  transform: translate(-50%, -50%);
+  border-radius: 25px;
+}
+.bgoverlay {
+  background-image: linear-gradient(135deg, rgba(255, 255, 255, 1) 0%, rgba(29,17,37,1) 100%);
+  z-index: -1;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  scale: 1;
+  transform: translate(-50%,-50%);
+  width: auto;
+  height: auto;
+  transition: all .01s ease-in-out; 
+  min-width: 100%; 
+  min-height: 100%;
+  mix-blend-mode: multiply;
+  opacity: 100%;
+}
+a {
+  text-decoration: none;
+  color: unset;
+}
+p {
+  margin: unset;
+}
+span {
+  font-size: 2vw;
+   display:grid
+}
+@media only screen and (max-width: 1100px) {
+  .soc {
+    font-size: 6vw;
+  }
+  .divider {
+    display: flex;
+   flex-direction: column;
+  }
+  .twitchembed {
+    width: 100%;
+    height: calc(100vw * 9 / 16);
+    position: relative;
+    justify-content: center;
+    align-self: center;
+    top: unset;
+    left: unset;
+    transform: unset;
+    border-radius: 25px;
+  }
+  .divider > div {
+    height: max-content;
+  }
+  .soc {
+    text-align: center;
+    font-size: 14vw;
+    padding: 10vw;
+  }
+  span {
+    font-size: 5vw;
+  }
+}

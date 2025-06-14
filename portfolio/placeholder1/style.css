@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css2?family=Afacad+Flux:wght@100..1000&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bowlby+One+SC&display=swap');
+header {
+    font-size: 3vw;
+    display: grid;
+    grid-template-columns: 2fr 2fr 2fr 1fr;
+    text-align: center;
+    align-content: center;
+    justify-content: center;
+    top: 0;
+    position: sticky;
+    background: #fff;
+}
+header > a {
+    text-decoration: none;
+    color: #9ECF7A;
+    transition: all ease-in-out 100ms;
+}
+header > a:hover {
+    color: #F58F91;
+    font-weight: 1000;
+}
+header > a >  img {
+    width: 3.5vw;
+    align-self: center;
+    justify-self: center;
+    transition: all ease-in-out 100ms;
+    cursor: pointer;
+}
+header > a > img:hover {
+    transform: scale(1.1)
+}
+body {
+    font-family: Afacad Flux;
+    background: rgb(255,255,255);
+    background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(227,227,227,1) 100%);
+    margin: 0;
+    background-size: auto;
+    background-repeat: no-repeat;
+    height: 100%;
+    overflow-x: hidden;
+}
+.kids {
+    font-family: Bowlby One SC;
+}
+.maintitle-container {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    width: 100vw;
+    height: 60vh;
+    align-content: center;
+    justify-content: center;
+}
+.maintitle {
+    font-size: 1.75vw;
+    width: 30vw;
+    margin-left: 10vw;
+    color: rgba(158,207,122,1.00);
+    justify-content: center;
+    align-self: center;
+    position: sticky;
+    top: 10vh;
+    background-color: #4F8D6B;
+    padding: 25px;
+    border-radius: 25px;
+
+}
+rainbow {
+    background: #FF0000;
+    background: linear-gradient( 89.7deg, rgba(223,0,0,1) 2.7%, rgba(214,91,0,1) 15.1%, rgba(233,245,0,1) 29.5%, rgba(23,255,17,1) 45.8%, rgba(29,255,255,1) 61.5%, rgba(5,17,255,1) 76.4%, rgba(202,0,253,1) 92.4% );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.maintitle-container > img {
+    width: 40vw;
+    margin-right: 10vw;
+    border-radius: 2.5vw;
+}
+.uvodtext {
+    font-size: 3vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
+    align-items: center;
+}
+.uvodtext > button {
+    background-image: linear-gradient(to right, #1D976C 0%, #93F9B9  51%, #1D976C  100%);
+    width: 30vw;
+    height: 10vh;
+    text-align: center;
+    text-transform: uppercase;
+    transition: ease-in-out 0.3s;
+    background-size: 200% auto;
+    color: black;            
+    border-radius: 1.5vw;
+    display: block;
+    font-family: Afacad Flux;
+    font-size: 2vw;
+    border: none;
+    cursor: pointer;
+    align-self: center;
+    justify-content: center;
+}
+ .uvodtext > button:hover {
+    background-position: right center;
+    color: #fff;
+    text-decoration: none;
+}
+.uvodtext > p {
+    text-align: Right;
+    margin-left: 5vw;
+    width: 45vw;
+    padding: 2vh;
+    border-radius: 2vh;
+    background: rgba(158,207,122,0.5);
+}
+.podnadpis {
+    text-align: center;
+    color: rgba(158,207,122,1.00);
+    font-size: 48pt;
+    margin-bottom: 6vw;
+}
+.logo {
+    padding-top: 10px;
+}

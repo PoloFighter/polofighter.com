@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title></title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="mcpacks.css" />
+  </head>
+  <body>
+    <div>
+      <style>
+        .backupbg {
+          position: fixed;
+          top: 50%;
+          left: 50%;
+          scale: 1;
+          transform: translate(-50%, -50%);
+          width: auto;
+          height: auto;
+          transition: all 0.01s ease-in-out;
+          min-width: 100%;
+          min-height: 100%;
+          background-image: linear-gradient(45deg, #fc3c61, #2d0f3d);
+          z-index: -7;
+        }
+      </style>
+      <div class="backupbg" id="backupbg"></div>
+    </div>
+    <!-- Backup Background -->
+    <style>
+      .verright {
+        z-index: 5555555555555555;
+        bottom: 0;
+        right: 0;
+        position: fixed;
+        color: white;
+        font-size: 15px;
+        opacity: 0.5;
+        font-family: "Inconsolata", monospace;
+      }
+      .left {
+        z-index: 5555555555555555;
+        bottom: 0;
+        left: 0;
+        position: fixed;
+        color: white;
+        font-size: 15px;
+        opacity: 0.5;
+        font-family: "Inconsolata", monospace;
+        cursor: pointer;
+      }
+      .left:hover {
+        text-decoration-line: underline;
+        font-size: 16px;
+        color: blue;
+      }
+    </style>
+        <script defer src="/debuginfo.js"></script>
+        <di class="debuginfo"></di>
+    <video class="video-container" id="bg" playsinline autoplay loop muted>
+      <source src="/res/videos/Blur Random.webm" type="video/mp4" />
+    </video>
+    <section>
+      <h1 id="coropvp">CoroPvP Revamp 1.8.x</h1>
+      <div class="sections">
+        <div class="cp">
+          <h2 class="qd">Revamped version of a pack I made 2 years ago</h2>
+          <h3 class="rq">
+            <a href="https://www.optifine.net/home" target="_blank">Optifine</a>
+            Required for all features of the pack!
+          </h3>
+          <div class="features">
+            <li>
+              Overlay (You can put any pack under it for example faithful)
+            </li>
+            <li>Custom Sky</li>
+            <li>Saturated Grass & Leaves</li>
+            <li>Animated Items</li>
+            <li>Fullbright</li>
+            <p></p>
+          </div>
+        </div>
+        <div class="download">
+          <img class="packpng" src="\res\images\packs\pack.png" />
+          <iframe
+            title="CoroPvP Revamp Pack Release"
+            src="https://www.youtube.com/embed/P8TwuYdCcUk"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            class="iframe"
+            allowfullscreen
+          ></iframe>
+          <button target="_blank" id="downloadbutton" class="downloadbutton">
+            Download
+          </button>
+        </div>
+      </div>
+    </section>
+    <div>
+      <style>
+        .logo {
+          float: right;
+          z-index: 9999;
+          width: 110px;
+          position: fixed;
+          transition: all 0.1s ease-in-out;
+          top: 0;
+          right: 0;
+          margin-top: 7px;
+          margin-right: 7px;
+          cursor: pointer;
+        }
+        .logo:hover {
+          transform: scale(1.05);
+        }
+        @media (max-width: 600px) {
+          .logo {
+            opacity: 0.5;
+          }
+        }
+      </style>
+      <img src="/res/images/PF LOGO wstroke png.png" class="logo" id="logo" />
+      <script>
+        document.getElementById("logo").onclick = () => {
+          window.location.href = "/";
+        };
+      </script>
+    </div>
+    <script src="mcpacks.js"></script>
+  </body>
+</html>

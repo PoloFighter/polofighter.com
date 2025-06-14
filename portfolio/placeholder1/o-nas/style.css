@@ -1,0 +1,156 @@
+@import url('https://fonts.googleapis.com/css2?family=Afacad+Flux:wght@100..1000&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bowlby+One+SC&display=swap');
+.home {
+    width: 5vw;
+    align-self: center;
+    justify-self: center;
+    transition: all ease-in-out 100ms;
+    cursor: pointer;
+    padding: 25px;
+}
+.home:hover {
+    transform: scale(1.1)
+}
+body {
+    font-family: Afacad Flux;
+    overflow-x: hidden;
+    margin: 0px;
+}
+/*
+    background: linear-gradient(180deg,#ffffff 0%, #156c4d  100%);
+    background-size: auto;
+    background-repeat: no-repeat;
+*/
+.kids {
+    font-family: Bowlby One SC;
+}
+rainbow {
+    background: #FF0000;
+    background: linear-gradient( 89.7deg, rgba(223,0,0,1) 2.7%, rgba(214,91,0,1) 15.1%, rgba(233,245,0,1) 29.5%, rgba(23,255,17,1) 45.8%, rgba(29,255,255,1) 61.5%, rgba(5,17,255,1) 76.4%, rgba(202,0,253,1) 92.4% );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.maintitle {
+    text-align: center;
+    font-size: 3vw;
+    color: rgba(158,207,122,1.00);
+    background-color: rgba(0,0,0,0.5);
+    padding: 5px;
+}
+.p1 {
+    font-family: Afacad Flux;
+    width: 60vw;
+    font-size: 3vh;
+    padding: 10px;
+    margin: 0px;
+    color: white;
+    text-align: center;
+}
+.p1-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.ciel{
+    background-color: #156c4d;
+    height: 500px;
+    width: 100%;
+    border-top-left-radius: 5vw;
+    border-top-right-radius: 5vw;
+}
+.ciel > h2 {
+    font-size: 36pt;
+    font-weight: 900;
+    text-align: center;
+    color: white;
+    padding: 50px;
+}
+.historia {
+    margin: 0;
+    background-color: #41c724;
+    width: 100%;
+}
+.historia > h2 {
+    font-size: 36pt;
+    font-weight: 900;
+    text-align: center;
+    color: white;
+    padding: 50px;
+}
+.p2 {
+    font-family: Afacad Flux;
+    width: 60vw;
+    font-size: 3vh;
+    padding: 10px;
+    margin: 0px;
+    color: white;
+    text-align: center;
+}
+.p2-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.pedpri {
+    background-color: #92ff6f;
+    width: 100%;
+    padding-bottom: 200px;
+}
+.pedpri > h2 {
+    font-size: 36pt;
+    font-weight: 900;
+    text-align: center;
+    color: black;
+    padding: 50px;
+}
+.p3 {
+    font-family: Afacad Flux;
+    width: 60vw;
+    font-size: 3vh;
+    padding: 10px;
+    margin: 0px;
+    color: black;
+    text-align: center;
+}
+.p3-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.spacer1 {
+    aspect-ratio: 960/100;
+    width: 100vw;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.layer1 {
+    background-image: url('images/wave1.svg');
+}
+.spacer2 {
+    aspect-ratio: 960/300;
+    width: 100vw;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.layer2 {
+    background-image: url('images/wave2.svg');
+}
+section {
+    display: inline-block;  
+}
+@media only screen and (max-width: 600px) {
+    .p1, .p2, .p3 {
+        width: 95vw;
+        font-size: 2vh;
+    }
+    .maintitle {
+        font-size: 8vw;
+    }
+    .home {
+        width: 8vh;
+    }
+}

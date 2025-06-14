@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <link rel="stylesheet" href="social.css" />
+    <title>Socials</title>
+    <link rel="icon" type="image/x-icon" href="/res/images/PF LOGO halloween.png" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  </head>
+    <body>
+      <div class="bg">
+        <video
+          class="video-container"
+          id="bg"
+          playsinline
+          autoplay
+          loop
+          muted
+        >
+          <source src="/res/videos/Variant2.webm" type="video/webm" />
+        </video>
+      </div>
+        
+      </div>
+      <div>
+        <style>
+          .backupbg {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            scale: 1;
+            transform: translate(-50%, -50%);
+            width: auto;
+            height: auto;
+            transition: all 0.01s ease-in-out;
+            min-width: 100%;
+            min-height: 100%;
+            background-image: linear-gradient(45deg, #fc3c61, #2d0f3d);
+            z-index: -7;
+          }
+        </style>
+        <div class="backupbg" id="backupbg"></div>
+      </div> <!-- Backup Background -->
+      <script defer src="/debuginfo.js"></script>
+      <di class="debuginfo"></di>
+      
+      <div class="divider">
+        <div >
+          <iframe class="twitchembed" src="https://player.twitch.tv/?channel=polofighterlmao&parent=polofighter.com" frameborder="0" allowfullscreen="true" scrolling="no"></iframe> 
+        </div>
+        <section class="soc">
+          <a href="https://twitch.tv/polofighterlmao" class="ttv" id="ttv">Twitch</a>
+          <a href="https://youtube.com/polofighter" class="yt" id="yt">YouTube </a>
+          <a href="https://instagram.com/PoloFighterGFX" class="ig" id="ig">Instagram<span >@polofightergfx</span></a>
+          <a href="https://discord.gg/UY4dtYCD2Y" class="dc" id="dc">Discord<span >PoloFighter#3839</span></a>
+          <a href="https://paypal.me/PoloFighterGFX" class="pp" id="pp"><p class="pp1">PayPal</p></a>
+          <div>
+            <a href="mailto:polofightergfx@gmail.com" class="ml" id="ml">E-Mail</a>
+            <div class="mlc" id="mlc">(Copy to Clipboard)</div>
+          </div>  
+        </section>
+      </div>
+      
+    </body>
+    <img src="/res/images/PF LOGO wstroke png.png" class="logo" id="logo" />
+  <script src="social.js"></script>
+</html>

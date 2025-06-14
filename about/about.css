@@ -1,0 +1,234 @@
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@500&display=swap');
+.verright {
+  z-index: 5555555555555555;
+  bottom: 0;
+  right: 0;
+  position:fixed;
+  color: white;
+  font-size: 15px;
+  opacity: 0.5;
+  font-family: 'Inconsolata', monospace;
+}
+
+body {
+  font-family: montserrat;
+}
+.left {
+  z-index: 5555555555555555;
+  bottom: 0;
+  left: 0;
+  position:fixed;
+  color: white;
+  font-size: 15px;
+  opacity: 0.5;
+  font-family: 'Inconsolata', monospace;
+  cursor: pointer;
+}
+.left:hover {
+  text-decoration-line:underline;
+  font-size: 16px;
+  color: blue;
+}
+.logo {
+  float: right;
+  z-index: 3;
+  width: 15vh;
+  position: absolute;
+  transition: all .1s ease-in-out; 
+  top: 0;
+  right: 0;
+  margin-top: 7px;
+  margin-right: 7px;
+  opacity: 100%;
+  order: 2;
+  cursor: pointer;
+}
+.logo:hover {
+  transform: scale(1.1); 
+}
+.vlajka {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  z-index: 5;
+  margin-right: 50vw;
+}
+.video-container {
+  top: 0;
+  position: fixed;
+  left: 0; 
+  transition: all .1s ease-in-out; 
+  z-index: -5;
+  width: 200vw;
+  height: 150vh;
+  scale: 1.1;
+  margin-left: -50vw;
+  margin-top: -25vh;
+}
+.fast, .prg {
+  z-index: 3;
+  background: rgba(29, 17, 37, 1);
+  height: fit-content;
+  width: auto;
+  font-size: 23pt;
+  border-radius: 25px;
+  padding: 15px;
+  color: #e23f58;
+  font-family: cocoL;
+  transition: all 0.1s ease-in-out;
+  text-align: justify;
+}
+.pic {
+  background: linear-gradient(180deg,rgba(29, 17, 37, 1) 0%, rgba(47, 27, 61, 1) 100%);
+  padding: 25px;
+  border-radius: 25px;
+}
+.fast {
+  background: linear-gradient(90deg,rgba(29, 17, 37, 1) 0%, rgba(47, 27, 61, 1) 100%);
+}
+.prg {
+    background: linear-gradient(-90deg,rgba(29, 17, 37, 1) 0%, rgba(47, 27, 61, 1) 100%);
+}
+.fast, .prg, .pic {
+  background: linear-gradient(300deg,rgba(29, 17, 37,0.45),rgba(47, 27, 61,0.95),#4a2e5e);
+  backdrop-filter: blur(25px);
+  background-size: 180% 180%;
+  animation: gradient-animation 9s ease infinite;
+}
+
+@keyframes gradient-animation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+.fast:hover, .prg:hover {
+  text-shadow: 0px 0px 5px rgba(226, 63, 88, 0.6);
+}
+.text {
+  width: 60%;
+  gap: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  height: 64vh;
+}
+.content {
+  gap: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 25vh;
+}
+.picimage {
+  width: 50vh;
+  aspect-ratio: 1/1;
+  border-radius: 15px;
+}
+.picimage:hover {
+  box-shadow: 0px 0px 5px rgba(226, 63, 88, 0.6);
+}
+.pic h1 {
+  font-family: Monument;
+  text-align: center;
+  color: #e23f58;
+  margin: 0;
+  margin-top: 15px;
+}
+p {
+  text-align: center;
+  color: #e23f58;
+  font-style: italic;
+  margin: 0;
+}
+h1:hover, p:hover {
+  text-shadow: 0px 0px 5px rgba(226, 63, 88, 0.6);
+}
+@font-face {
+  font-family: 'cocoL'; /*a name to be used later*/
+  src: url('/res/font/CocoSharpL-Light.otf'); /*URL to font*/
+}
+.sk {
+  float: right;
+  z-index: 1;
+  width: 23vh; 
+  top: -2vh;
+  position: absolute;
+  right: 8px;
+  transition: opacity .15s ease-in-out;
+  margin-right: 15.5vmin; 
+  cursor: pointer;
+  grid-column: 1;
+  flex: 1;
+  order: 1;
+}
+.uk {
+  opacity: 0;
+  float: right;
+  z-index: 1;
+  width: 23vh;
+  top: -2vh;
+  position: absolute;
+  right: 8px;
+  transition: opacity .15s ease-in-out;
+  margin-right: 15.5vmin; 
+  cursor: pointer; 
+  grid-column: 1;
+  order: 1;
+}
+@media only screen and (max-width: 991px) {
+  .video-container{
+    top: 0;
+    position: fixed;
+    left: 0; 
+    transition: all .1s ease-in-out; 
+    z-index: -1;
+    width: 200vh;
+    height: 150vh;
+    margin-bottom: 100vh;
+    scale: 1.1;
+  }
+  .logo {
+    width: 20vw
+  }
+  .uk {
+    width: 32vw;
+    margin-right: 23vw;
+    margin-top: 1.2vw;
+  }
+  .sk {
+    width: 33vw;
+    margin-right: 23vw;
+    margin-top: 1vw;
+  }
+  .prg, .fast {
+    margin-top: 5px;
+    font-size: 34pt;
+  }
+  .pic h1, .pic p {
+    font-size: 40pt;
+  }
+  .content {
+    flex-direction: column;
+    gap:0;
+  }
+  .content {
+    gap: 25px;
+  }
+  .pic {
+    width: 85vw;
+  }
+  .picimage{
+    width: 100%;
+  }
+  .text {
+    width: 90vw;
+  }
+};

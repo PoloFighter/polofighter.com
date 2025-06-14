@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 487.79 138.01">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #3b1c32;
+        font-family: MonumentExtended-Ultrabold, 'Monument Extended';
+        font-size: 94.9px;
+        font-weight: 700;
+      }
+
+      .cls-2 {
+        letter-spacing: 0em;
+      }
+
+      .cls-3 {
+        fill: #6b1e55;
+      }
+
+      .cls-4 {
+        letter-spacing: 0em;
+      }
+
+      .cls-5 {
+        letter-spacing: 0em;
+      }
+    </style>
+  </defs>
+  <g id="Layer_1-2" data-name="Layer 1">
+    <text class="cls-1" transform="translate(106.1 92.72)"><tspan class="cls-2" x="0" y="0">A</tspan><tspan x="92.62" y="0">li</tspan><tspan class="cls-5" x="145.77" y="0">a</tspan><tspan class="cls-4" x="223.4" y="0">se</tspan></text>
+    <polygon class="cls-3" points="106.1 109.58 103.51 109.58 89.17 109.58 77.35 109.58 77.35 98.86 77.35 84.91 61.96 84.91 61.96 84.91 56.87 84.91 56.87 80.3 56.87 80.3 56.87 64.95 56.87 46.64 36.67 46.64 28.82 46.64 28.82 39.52 28.82 29.01 17.22 29.01 14.41 29.01 14.41 26.46 14.41 0 0 0 0 13.39 0 28.75 0 138.01 120.54 138.01 133.06 138.01 137.47 138.01 138.01 138.01 138.01 109.58 106.1 109.58"/>
+  </g>
+</svg>
