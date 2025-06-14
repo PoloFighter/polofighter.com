@@ -16,7 +16,7 @@ mname.onclick = () => {
 logo.onclick = () => {
   if (dark) {
     document.getElementById("bg").style = "filter: grayscale(0) brightness(1);";
-    document.getElementById("logo").setAttribute("src", "res/images/Moon.svg");
+    document.getElementById("logo").setAttribute("src", "res/images/dark.svg");
     document.getElementById("logo").style.setProperty = "margin-right: 0px;";
     document.getElementById("backupbg").style =
       "background-image: linear-gradient(45deg,#fc3c61,#2d0f3d);";
