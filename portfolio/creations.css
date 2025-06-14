@@ -236,7 +236,7 @@ wave {
     background-position-y: bottom;
 }
 .miscwave {
-    background-image: url(/../res/wave-backgrounds/wavebg.svg);
+    background-image: url(../res/wave-backgrounds/wavebg.svg);
 }
 .thumbwave {
     background-image: url(../res/wave-backgrounds/wavethumbnail.svg);
