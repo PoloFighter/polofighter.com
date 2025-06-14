@@ -216,7 +216,7 @@ body {
     font-weight: 700;
     rotate: 0deg;
 }
-.mischeader, .TransHeader, .ThumbHeader, .webheader {
+.header {
     font-family: Montserrat;
     display: grid;
     text-align: center;
@@ -351,6 +351,12 @@ h1 {
 }
 .website3 {
     padding-bottom: 10vh;
+}
+.dmwave {
+    transform: rotate(180deg);
+}
+.dmwave h1 {
+    transform: rotate(180deg);
 }
 @media only screen and (max-width: 600px) {
     .websites {
