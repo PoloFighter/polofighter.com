@@ -138,7 +138,7 @@ body {
   box-shadow: 0px 0px 5px rgba(226, 63, 88, 0.6);
 }
 .pic h1 {
-  font-family: Monument;
+  font-family: Monument Extended, sans-serif;
   text-align: center;
   color: #e23f58;
   margin: 0;
