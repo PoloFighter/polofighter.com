@@ -153,7 +153,7 @@ h1:hover, p:hover {
 }
 @font-face {
   font-family: 'cocoL'; /*a name to be used later*/
-  src: url('../res/font/CocoSharpL-Light.otf'); /*URL to font*/
+  src: url('./res/font/CocoSharpL-Light.otf'); /*URL to font*/
 }
 .sk {
   float: right;
