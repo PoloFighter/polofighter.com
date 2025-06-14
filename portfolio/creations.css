@@ -98,16 +98,37 @@ selector {
     flex-direction: column;
     font-family: montserrat;
     transition: all 200ms ease-in-out;
+    mix-blend-mode: difference;
 }
 .item {
     font-size: 1.25vw;
-    color:#000000;
+    color: #fff;
     transition: all 200ms ease-in-out;
     text-align: left;
+    display: flex;
+    align-items: center;
 }
 .item:hover {
     font-weight: 800;
-    color: #fff;
+    color: rgb(239, 185, 255);
+    mix-blend-mode: normal;
+}
+.item:hover::before {
+    transition: all 200ms ease-in-out;
+}
+.item:hover p {
+    width: 25px;
+    background-color: rgb(239, 185, 255);
+    height: 2px;
+    margin-right: 5px;
+}
+.item p {
+    display: inline-block;
+    transition: all 400ms cubic-bezier(0.6, 0.13, 0, 0.97);
+    height: 2px;
+    width: 0px;
+    background-color: #fff;
+    margin: 0;
 }
 .video-container {
     position: fixed;
