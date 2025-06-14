@@ -3,7 +3,7 @@ let uparrow = document.getElementById("uparrow");
 let hd = document.getElementById("mischeaders");
 
 document.getElementById("logo").onclick = () => {
-  window.location.href = "/";
+  window.location.href = "../";
 };
 
 uparrow.onclick = () => {

@@ -11,7 +11,7 @@ if (
   age--;
 }
 logo.onclick = () => {
-  window.location.href = "/";
+  window.location.href = "../";
 };
 
 window.onload = () => {

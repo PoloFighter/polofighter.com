@@ -11,7 +11,7 @@ let logo = document.getElementById("logo");
 let ttv = document.getElementById("ttv");
 
 logo.onclick = () => {
-  window.location.href = "/";
+  window.location.href = "../";
 };
 document.getElementById("socbg").playbackRate = 5;
 
