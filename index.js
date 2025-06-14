@@ -24,7 +24,7 @@ logo.onclick = () => {
   } else {
     document.getElementById("bg").style =
       "filter: grayscale(1) brightness(0.3);";
-    document.getElementById("logo").setAttribute("src", "res/images/sun.svg");
+    document.getElementById("logo").setAttribute("src", "res/images/light.svg");
     document.getElementById("backupbg").style =
       "background-image: linear-gradient(45deg,#57000d,#2d0f3d);";
     dark = true;
