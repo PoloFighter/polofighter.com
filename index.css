@@ -8,7 +8,6 @@ body {
   font-family: Montserrat;
 }
 .video-container {
-  filter: blur(100px);
   position: fixed;
   overflow: hidden;
   top: 50%;
