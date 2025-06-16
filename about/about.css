@@ -185,7 +185,7 @@ h1:hover, p:hover {
   grid-column: 1;
   order: 1;
 }
-@media only screen and (max-width: 991px) {
+@media only screen and (orientation: portrait) {
   .video-container{
     top: 0;
     position: fixed;
@@ -212,10 +212,10 @@ h1:hover, p:hover {
   }
   .prg, .fast {
     margin-top: 5px;
-    font-size: 34pt;
+    font-size: 16pt;
   }
   .pic h1, .pic p {
-    font-size: 40pt;
+    font-size: 20pt;
   }
   .content {
     flex-direction: column;
@@ -231,6 +231,6 @@ h1:hover, p:hover {
     width: 100%;
   }
   .text {
-    width: 90vw;
+    width: 95vw;
   }
 };
