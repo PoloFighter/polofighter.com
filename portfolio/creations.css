@@ -101,12 +101,13 @@ selector {
     mix-blend-mode: difference;
 }
 .item {
-    font-size: 1.25vw;
+    font-size: 3vh;
     color: #fff;
     transition: all 200ms ease-in-out;
     text-align: left;
     display: flex;
     align-items: center;
+    white-space: nowrap;
 }
 .item:hover {
     font-weight: 800;
@@ -117,7 +118,7 @@ selector {
     transition: all 200ms ease-in-out;
 }
 .item:hover p {
-    width: 25px;
+    width: 30px;
     background-color: rgb(239, 185, 255);
     margin-right: 5px;
 }
