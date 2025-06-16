@@ -93,6 +93,8 @@ a:link {
     
 }
 .downloadbutton {
+    font-family: Montserrat;
+    font-weight: 600;
     display: flex;
     grid-row: 2;
     width: 20vw;
