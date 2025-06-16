@@ -46,14 +46,14 @@ a {
   background-color: rgba(29, 17, 37,0.85);
   top: 0;
   z-index: 20;
-  height: 15vh;
+  height: max-content;
   width: 100vw;
   box-sizing: border-box;
   display: flex;
   justify-content: space-between;
   backdrop-filter: blur(10px);
   align-items: center;
-  font-size: 36pt;
+  font-size: 30pt;
 }
 .menu {
   background: linear-gradient(300deg,rgba(29, 17, 37,0.85),rgba(47, 27, 61,0.85),rgba(74, 46, 94, 0.85));
@@ -130,7 +130,7 @@ a {
 header {
   margin: 0px auto;
 }
-@media only screen and (max-width: 500px) {
+@media only screen and (orientation: portrait) {
   .menu {
     font-size: 3vh;
     text-align: left;
