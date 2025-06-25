@@ -10,6 +10,9 @@ a {
     text-decoration: none;
     color: unset;
 }
+body {
+    font-family: 'Montserrat', sans-serif;
+}
 h1 {
     font-family: Montserrat;
 }
@@ -372,6 +375,48 @@ h1 {
 }
 .website3 {
     padding-bottom: 10vh;
+}
+.designmanuals {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--mid-dark);
+    color: white;
+}
+.manual {
+    text-align: center;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    justify-items: center;
+    align-items: center;
+    width: 100%;
+}
+.manual a {
+    width: min-content;
+    white-space: nowrap;
+}
+.manualdescription {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+.dm-button {
+    font-family: Monument;
+    background: var(--light);
+    font-size: 16pt;
+    padding: 2vw;
+    transition: 100ms ease-in-out;
+    border-radius: 25px;
+    outline: 0px solid rgba(255, 255, 255, 0.5);
+
+}
+.dm-button:hover {
+    background-color: var(--mid-dark);
+    color: var(--light);
+    text-shadow: 0 0 15px #E43A57;
+    scale: 1.05;
+    outline: 2px solid rgba(255, 255, 255, 0.5);
 }
 .dmwave {
     transform: rotate(180deg);
