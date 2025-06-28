@@ -200,9 +200,9 @@ body {
 }
 .miscbg {
     transition: scale .1s ease-in-out;
-    outline: 4px solid rgba(255, 255, 255, 0.5);
     border-radius: 10px;
     background-color: #fff;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
     width: 100%;
     height: 100%;
 }
@@ -210,14 +210,15 @@ body {
     width: 100%;
     height: 100%;
     transition: scale .1s ease-in-out;
-    outline: 4px solid rgba(255, 255, 255, 0.5);
     border-radius: 10px;
     background-color: #fff;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
 }
 .miscbg1 {
     width: 50%;
 }
-.miscbg:hover, .ThumbsImg:hover {
+.miscbg:hover, .miscbg1:hover, .ThumbsImg:hover, .trans:hover {
+    box-shadow: 10px 5px 15px rgba(0, 0, 0, 0.4);
     scale: 1.01 ;
 }
 .hidden {
@@ -352,9 +353,8 @@ h1 {
 }
 .prev {
     width: 40vw;
-    background-color: white;
     border-radius: 25px;
-    outline: 5px solid rgba(255, 255, 255, 0.5);
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
 }
 .web-button {
     font-family: Monument;
@@ -371,7 +371,7 @@ h1 {
     color: var(--light);
     text-shadow: 0 0 15px #E43A57;
     scale: 1.05;
-    outline: 5px solid rgba(255, 255, 255, 0.5);
+    outline: 5px solid rgba(37, 4, 59, 0.671);
 }
 .website3 {
     padding-bottom: 10vh;
@@ -392,6 +392,12 @@ h1 {
     align-items: center;
     width: 100%;
 }
+.manualpreview {
+    border-radius: 25px;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+    aspect-ratio: 6/4;
+    width: 600px;
+}
 .manual a {
     width: min-content;
     white-space: nowrap;
@@ -409,7 +415,6 @@ h1 {
     transition: 100ms ease-in-out;
     border-radius: 25px;
     outline: 0px solid rgba(255, 255, 255, 0.5);
-
 }
 .dm-button:hover {
     background-color: var(--mid-dark);
