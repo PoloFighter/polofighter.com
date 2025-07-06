@@ -392,13 +392,13 @@ h1 {
     grid-template-columns: 2fr 1fr;
     justify-items: center;
     align-items: center;
-    width: 100%;
+    width: 80%;
 }
 .manualpreview {
     border-radius: 25px;
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
     aspect-ratio: 6/4;
-    width: 600px;
+    width: 50%;
 }
 .manual a {
     width: min-content;
@@ -412,7 +412,7 @@ h1 {
 .dm-button {
     font-family: Monument;
     background: var(--light);
-    font-size: 16pt;
+    font-size: 1.2vmax;
     padding: 2vw;
     transition: 100ms ease-in-out;
     border-radius: 25px;
