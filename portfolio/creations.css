@@ -225,6 +225,7 @@ body {
 .miscbg:hover, .miscbg1:hover, .ThumbsImg:hover, .trans:hover, .poster:hover {
     box-shadow: 10px 5px 15px rgba(0, 0, 0, 0.4);
     scale: 1.01 ;
+    cursor: pointer;
 }
 .hidden {
     transform: translateX(-100%);
