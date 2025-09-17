@@ -1,7 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 @font-face{font-family:monument extended;font-style:normal;font-weight:400;src:local('Monument Extended'),url(https://fonts.cdnfonts.com/s/19595/MonumentExtended-Regular.woff) format('woff')}
 @font-face{font-family:monument extended;font-style:normal;font-weight:800;src:local('Monument Extended'),url(https://fonts.cdnfonts.com/s/19595/MonumentExtended-Ultrabold.woff) format('woff')}
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+.montserrat-universal {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
 :root {
     --light: #E43A57;
     --mid-light: #892F4F;
@@ -101,7 +106,7 @@ selector {
     position: fixed;
     display: flex;
     flex-direction: column;
-    font-family: montserrat;
+    font-family: "montserrat";
     transition: all 200ms ease-in-out;
     mix-blend-mode: difference;
 }
@@ -410,7 +415,7 @@ h1 {
     text-align: left;
 }
 .dm-button {
-    font-family: Monument;
+    font-family: Monument Extended;
     background: var(--light);
     font-size: 1.2vmax;
     padding: 2vw;
