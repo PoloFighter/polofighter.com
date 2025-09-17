@@ -14,7 +14,7 @@
     />
   </head>
   <body>
-    <div>
+<div id="media-fullscreen-overlay" style="display:none;position:fixed;z-index:9999;top:0;left:0;width:100vw;height:100vh;background:rgba(0,0,0,0.80);backdrop-filter: blur(20px);justify-content:center;align-items:center;"></div>    <div>
       <style>
         .backupbg {
           position: fixed;
@@ -37,7 +37,7 @@
     <script defer src="../debuginfo.js"></script>
     <di class="debuginfo"></di>
     <div id="bg">
-      <video style="filter: blur(10px);" class="video-container" autoplay loop muted>
+      <video style="filter: blur(10px);" class="video-container no-fullscreen" autoplay loop muted>
         <source src="../res/videos/bg.webm" type="video/mp4" />
       </video>
     </div>
@@ -48,6 +48,7 @@
       <a draggable="false" href="#web" class="item"><p></p>Websites</a>
       <a draggable="false" href="#dm" class="item"><p></p>Design Manuals</a>
       <a draggable="false" href="#po" class="item"><p></p>Posters</a>
+      <a draggable="false" href="#dv" class="item"><p></p>Design Visualizations</a>
       <a draggable="false" href="#un" class="item"><p></p>Unsorted</a>
     </selector>
     <div class="content">
@@ -59,22 +60,22 @@
           <img
             src="../res/images/misc/16to9v1.png"
             class="miscbg misc1"
-            onclick="window.open(this.src, '_blank');"
+            
           />
           <img
             src="../res/images/misc/16to9v2.png"
             class="miscbg misc2"
-            onclick="window.open(this.src, '_blank');"
+            
           />
           <img
             src="../res/images/misc/16to9v3.png"
             class="miscbg misc3"
-            onclick="window.open(this.src, '_blank');"
+            
           />
           <img
             src="../res/images/misc/16to9v4.png"
             class="miscbg misc4"
-            onclick="window.open(this.src, '_blank');"
+            
           />
           <img src="../res/images/misc/final.png" class="miscbg1 misc5" class="misc5" />
         </div>
@@ -89,48 +90,48 @@
             class="ThumbsImg"
             class="img1"
             id="img1"
-            onclick="window.open(this.src, '_blank');"
+            
           />
           <img
             src="../res/thumbs/2.jpg"
             class="ThumbsImg"
             class="img2"
             id="img2"
-            onclick="window.open(this.src, '_blank');"
+            
           />
           <img
             src="../res/thumbs/3.jpg"
             class="ThumbsImg"
             class="img3"
             id="img3"
-            onclick="window.open(this.src, '_blank');"
+            
           />
           <img
             src="../res/thumbs/4.jpg"
             class="ThumbsImg"
             class="img4"
             id="img4"
-            onclick="window.open(this.src, '_blank');"
+            
           />
           <img
             src="../res/thumbs/5.jpg"
             class="ThumbsImg"
             class="img5"
             id="img5"
-            onclick="window.open(this.src, '_blank');"
+            
           />
           <img
             src="../res/thumbs/6.jpg"
             class="ThumbsImg"
             class="img6"
             id="img6"
-            onclick="window.open(this.src, '_blank');"
+            
           />
           <div>
             <img
             src="../res/thumbs/7.png"
             class="ThumbsImg"
-            onclick="window.open(this.src, '_blank');"
+            
           />
           <h1>36k views</h1>
           </div>
@@ -138,7 +139,7 @@
             <img
             src="../res/thumbs/8.png"
             class="ThumbsImg"
-            onclick="window.open(this.src, '_blank');"
+            
           />
             <h1>3,4k views</h1>
           </div>
@@ -156,60 +157,52 @@
             autoplay
             muted
             class="trans"
-            class="trans1"
-            onclick="window.open(this.src, '_blank');"
+            
           ></video>
           <video
             type="video/webm"
             class="trans"
-            class="trans2"
             controls
             title="Urobené za 1 hodinu a 45 minút"
             src="../res/videos/Ebility - Alexej comp.webm"
-            onclick="window.open(this.src, '_blank');"
+            
           ></video>
           <video
           class="trans"
-          class="trans3"
           src="../res/videos/Drago.webm"
           type="video/mp4"
           loop
           autoplay
           muted
-          onclick="window.open(this.src, '_blank');"
+          
         ></video>
         <video
           class="trans"
-          class="trans4"
           src="../res/videos/mete.webm"
           type="video/mp4"
           loop
           autoplay
           muted
-          onclick="window.open(this.src, '_blank');"
+          
         ></video>
         <video
           class="trans"
-          class="trans5"
           src="../res/videos/N3o Ending Soon No Saber.webm"
           type="video/mp4"
           loop
           autoplay
           muted
-          onclick="window.open(this.src, '_blank');"
+          
         ></video>
         <video
           class="trans"
-          class="trans6"
           type="video/mp4"
           loop
           autoplay
           muted
-          src="../res/videos/Brb Glitch Compress+ lower q.mp4"
-          onclick="window.open(this.src, '_blank');"
-        ></video>
+          src="../res/videos/Brb Glitch Compress+ lower q.mp4">
+          </video>
         </div>
-      </section>
       <section>
         <wave class="webwave" id="web">
           <h1 class="header hidden" id="scheader">Websites</h1>
@@ -240,7 +233,7 @@
       </section>
       <section>
         <wave class="webwave dmwave" id="dm">
-          <h1 class="header hidden" id="scheader">Logo</h1>
+          <h1 class="header hidden" id="scheader">Design Manuals</h1>
         </wave>
         <div class="designmanuals" id="designmanuals">
           <div class="manual">
@@ -278,16 +271,29 @@
             <h1 class="header hidden" id="TransHeader" style="transform: rotate(180deg);">Posters</h1>
           </wave>
           <div class="posters">
-            <img onclick="window.open(this.src, '_blank');" src="../res/images/posters/poster1.png" alt="" class="poster">
-            <img onclick="window.open(this.src, '_blank');" src="../res/images/posters/poster2.png" alt="" class="poster">
-            <img onclick="window.open(this.src, '_blank');" src="../res/images/posters/poster3.png" alt="" class="poster">
-            <img onclick="window.open(this.src, '_blank');" src="../res/images/posters/poster4.png" alt="" class="poster">
-            <img onclick="window.open(this.src, '_blank');" src="../res/images/posters/poster5.png" alt="" class="poster">
-            <img onclick="window.open(this.src, '_blank');" src="../res/images/posters/poster6.png" alt="" class="poster">
-            <img onclick="window.open(this.src, '_blank');" src="../res/images/posters/poster7.png" alt="" class="poster">
-            <img onclick="window.open(this.src, '_blank');" src="../res/images/posters/poster8.png" alt="" class="poster">
-            <img onclick="window.open(this.src, '_blank');" src="../res/images/posters/poster9.png" alt="" class="poster">
+            <img src="../res/images/posters/poster1.png" alt="" class="poster">
+            <img src="../res/images/posters/poster2.png" alt="" class="poster">
+            <img src="../res/images/posters/poster3.png" alt="" class="poster">
+            <img src="../res/images/posters/poster4.png" alt="" class="poster">
+            <img src="../res/images/posters/poster5.png" alt="" class="poster">
+            <img src="../res/images/posters/poster6.png" alt="" class="poster">
+            <img src="../res/images/posters/poster7.png" alt="" class="poster">
+            <img src="../res/images/posters/poster8.png" alt="" class="poster">
+            <img src="../res/images/posters/poster9.png" alt="" class="poster">
           </div>
+      </section>
+      <section>
+        <wave style="transform: rotate(180deg);" class="thumbwave" id="dv">
+          <h1 style="transform: rotate(180deg);" class="header hidden" id="ThumbHeader">Design Visualizations</h1>
+        </wave>
+        <div class="visuals">
+          <img src="../res/images/visual1.png" class="visual" alt="">
+          <img src="../res/images/visual2.png" class="visual" alt="">
+          <img src="../res/images/visual3.png" class="visual" alt="">
+          <img src="../res/images/visual4.png" class="visual" alt="">
+          <img src="../res/images/visual5.png" class="visual" alt="">
+          <img src="../res/images/visual6.png" class="visual" alt="">
+        </div>
       </section>
     </div>
     <div>
@@ -304,7 +310,7 @@
           margin-right: 7px;
         }
       </style>
-      <img src="../res/images/PF LOGO wstroke png.png" class="logo" id="logo" />
+      <img src="../res/images/PF LOGO wstroke png.png" class="logo no-fullscreen" id="logo" />
       <script>
         document.getElementById("logo").onclick = () => {
           window.location.href = "/";
@@ -312,7 +318,7 @@
       </script>
     </div>
     <button title="Go to the top of the page" id="uparrow" class="uparrow">
-      <img class="arrow" src="../res/images/up-arrow-icon.svg" />
+      <img class="arrow no-fullscreen" src="../res/images/up-arrow-icon.svg" />
     </button>
   </body>
   <script src="creations.js"></script>

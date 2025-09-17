@@ -22,3 +22,49 @@ const observer = new IntersectionObserver((entries) => {
 
 const hiddenElements = document.querySelectorAll('.hidden ');
 hiddenElements.forEach((el) => observer.observe(el));
+
+document.addEventListener('DOMContentLoaded', function() {
+  const overlay = document.getElementById('media-fullscreen-overlay');
+  function closeOverlay() {
+    overlay.style.display = 'none';
+    overlay.innerHTML = '';
+    document.body.style.overflow = '';
+  }
+  overlay.addEventListener('click', closeOverlay);
+
+  function showMediaFullscreen(el) {
+    overlay.innerHTML = '';
+    let clone;
+    if (el.tagName.toLowerCase() === 'img') {
+      clone = document.createElement('img');
+      clone.src = el.src;
+      clone.style.maxWidth = '90vw';
+      clone.style.maxHeight = '90vh';
+      clone.style.boxShadow = '0 0 40px #000';
+      clone.style.borderRadius = '10px';
+    } else if (el.tagName.toLowerCase() === 'video') {
+      clone = document.createElement('video');
+      clone.src = el.src;
+      clone.controls = true;
+      clone.autoplay = true;
+      clone.loop = el.loop;
+      clone.muted = el.muted;
+      clone.style.maxWidth = '90vw';
+      clone.style.maxHeight = '90vh';
+      clone.style.boxShadow = '0 0 40px #000';
+      clone.style.borderRadius = '10px';
+    } else {
+      return;
+    }
+    overlay.appendChild(clone);
+    overlay.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+  }
+
+  document.querySelectorAll('img, video').forEach(media => {
+    if (media.classList.contains('no-fullscreen')) return;
+    media.addEventListener('click', function(e) {
+      showMediaFullscreen(this);
+    });
+  });
+});

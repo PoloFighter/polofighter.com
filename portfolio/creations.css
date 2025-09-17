@@ -101,7 +101,7 @@ h1 {
     transition: scale .1s ease-in-out;
 }
 selector {
-    z-index: 999999999999;
+    z-index: 999;
     padding: 0.5vw;
     position: fixed;
     display: flex;
@@ -193,7 +193,7 @@ body {
     background-color: var(--mid-light);
     gap: 50px;
 }
-.misc, .Thumbs, .Transitions {
+.misc, .Thumbs, .Transitions, .visuals {
     justify-items: center;
     align-items: center;
     display: grid;
@@ -214,7 +214,7 @@ body {
     width: 100%;
     height: 100%;
 }
-.miscbg1, .ThumbsImg, .trans, .poster {
+.miscbg1, .ThumbsImg, .trans, .poster, .visual {
     width: 100%;
     height: 100%;
     transition: scale .1s ease-in-out;
@@ -222,7 +222,7 @@ body {
     background-color: #fff;
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
 }
-.miscbg:hover, .miscbg1:hover, .ThumbsImg:hover, .trans:hover, .poster:hover {
+.miscbg:hover, .miscbg1:hover, .ThumbsImg:hover, .trans:hover, .poster:hover, .visual:hover  {
     box-shadow: 10px 5px 15px rgba(0, 0, 0, 0.4);
     scale: 1.01 ;
     cursor: pointer;
@@ -439,6 +439,9 @@ h1 {
   gap: 8vw;
   padding-left: 5vw;
   padding-right: 5vw;
+}
+.visuals {
+    background-color: var(--light);
 }
 @media only screen and (max-width: 600px) {
     .websites {
