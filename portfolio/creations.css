@@ -197,10 +197,11 @@ body {
     justify-items: center;
     align-items: center;
     display: grid;
-    grid-template-columns: 3fr 3fr;
+    grid-template-columns: 3fr 3fr 3fr;
     grid-template-rows: auto auto auto;
     gap: 8vw;
-    padding: 5vw;
+    padding-left: 5vw;
+    padding-right: 5vw;
 }
 .Transitions {
     background: var(--mid-dark);
@@ -220,9 +221,6 @@ body {
     border-radius: 10px;
     background-color: #fff;
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
-}
-.miscbg1 {
-    width: 50%;
 }
 .miscbg:hover, .miscbg1:hover, .ThumbsImg:hover, .trans:hover {
     box-shadow: 10px 5px 15px rgba(0, 0, 0, 0.4);
@@ -278,12 +276,6 @@ wave {
 }
 .webwave {
     background-image: url(../res/wave-backgrounds/waveweb.svg);
-}
-
-.misc5 {
-    grid-area: 3 / 1 / 4 / 3;
-    justify-self: center;
-    align-self: center;
 }
 .img1 {
     grid-column: 1;
@@ -364,7 +356,7 @@ h1 {
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
 }
 .web-button {
-    font-family: Monument;
+    font-family: Monument Extended;
     background: var(--light);
     font-size: 3vmax;
     padding: 2vw;
