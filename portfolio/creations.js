@@ -68,3 +68,24 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 });
+
+const burger = document.querySelector('.burger');
+const menu = document.querySelector('.menu');
+if (burger && menu) {
+  burger.addEventListener('click', function() {
+    menu.classList.toggle('menu-active');
+    burger.classList.toggle('burger-active');
+    if (menu.classList.contains('menu-active')) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+  });
+  menu.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', function() {
+      menu.classList.remove('menu-active');
+      burger.classList.remove('burger-active');
+      document.body.style.overflow = '';
+    });
+  });
+}

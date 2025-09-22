@@ -110,6 +110,42 @@ selector {
     transition: all 200ms ease-in-out;
     mix-blend-mode: difference;
 }
+.burger {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: left;
+    width: 30px;
+    height:30px;
+    cursor: pointer;
+    margin-bottom: 5px;
+}
+.burger div {
+    width: 15px;
+    height: 2px;
+    transition: all 200ms ease-in-out;
+    background-color: white;
+}
+.burger:hover div {
+    width: 30px;
+}
+.burger .burger1 {
+    transition-delay: 50ms;
+}
+.burger .burger2 {
+    transition-delay: 100ms;
+}
+.burger .burger3 {
+    transition-delay: 150ms;
+}
+.menu {
+    transition: all 200ms ease-in-out;
+    transform: translateX(-500px);
+}
+.menu.menu-active {
+    display: block;
+    transform: translateX(0px);
+}
 .item {
     font-size: 3vh;
     color: #fff;
