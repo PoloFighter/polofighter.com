@@ -196,7 +196,7 @@ selector {
 body {
     overflow-x: hidden;
     margin: 0;
-    width: 100vw;
+    width: 100%;
 }
 .logo {
     float: right;
@@ -487,9 +487,6 @@ h1 {
       align-items: center;
       width: 100%;
     }
-    selector {
-        display: none;
-    }
     .website {
         justify-content: center;
         align-content: center;
@@ -501,7 +498,7 @@ h1 {
         align-items: center;
     }
     .web-button {
-        font-size: 10vw;
+        font-size: 18pt 
     }
     .prev {
         width: 80vw;
@@ -529,6 +526,34 @@ h1 {
     }
     .trans, .Thumbs, .misc {
         gap: 10vw;
+    }
+    .header {
+        font-size: 24pt;
+    }
+    .web {
+        font-size: 18pt;
+    }
+    .manual {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 50px;
+    }
+    .manualpreview {
+        width: 100%;
+    }
+    .manual a {
+        width: 60%;
+    }
+    .dm-button {
+        font-size: 12pt;
+    }
+    .posters {
+        display: flex;
+        flex-direction: column;
+    }
+    .visuals {
+        display: flex;
+        flex-direction: column;
     }
 }
 .vid {
