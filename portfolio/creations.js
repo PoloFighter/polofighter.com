@@ -71,20 +71,27 @@ document.addEventListener('DOMContentLoaded', function() {
 
 const burger = document.querySelector('.burger');
 const menu = document.querySelector('.menu');
-if (burger && menu) {
+const gradient = document.querySelector('gradient');
+if (burger && menu && gradient) {
   burger.addEventListener('click', function() {
     menu.classList.toggle('menu-active');
     burger.classList.toggle('burger-active');
+    gradient.classList.toggle('gradient-active');
+    gradient.style.opacity = '1';
+    gradient.style.transition = 'opacity 0.5s ease-out';
     if (menu.classList.contains('menu-active')) {
       document.body.style.overflow = 'hidden';
     } else {
       document.body.style.overflow = '';
+      gradient.style.opacity = '0';
     }
   });
   menu.querySelectorAll('a').forEach(link => {
     link.addEventListener('click', function() {
       menu.classList.remove('menu-active');
       burger.classList.remove('burger-active');
+      gradient.style.opacity = '0';
+      gradient.style.transition = 'opacity 0.5s ease-out';
       document.body.style.overflow = '';
     });
   });
