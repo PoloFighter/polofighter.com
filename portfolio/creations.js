@@ -72,27 +72,45 @@ document.addEventListener('DOMContentLoaded', function() {
 const burger = document.querySelector('.burger');
 const menu = document.querySelector('.menu');
 const gradient = document.querySelector('gradient');
+
 if (burger && menu && gradient) {
-  burger.addEventListener('click', function() {
-    menu.classList.toggle('menu-active');
-    burger.classList.toggle('burger-active');
-    gradient.classList.toggle('gradient-active');
+  // Ensure gradient is hidden initially
+  gradient.style.opacity = '0';
+  gradient.style.transition = 'opacity 0.5s ease-out';
+  gradient.style.pointerEvents = 'none';
+
+  function openMenu() {
+    menu.classList.add('menu-active');
+    burger.classList.add('burger-active');
+    gradient.classList.add('gradient-active');
     gradient.style.opacity = '1';
-    gradient.style.transition = 'opacity 0.5s ease-out';
+    gradient.style.pointerEvents = 'auto';
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeMenu() {
+    menu.classList.remove('menu-active');
+    burger.classList.remove('burger-active');
+    gradient.style.opacity = '0';
+    gradient.style.pointerEvents = 'none';
+    document.body.style.overflow = '';
+    // Remove gradient-active after fade out
+    setTimeout(() => {
+      gradient.classList.remove('gradient-active');
+    }, 500);
+  }
+
+  burger.addEventListener('click', function() {
     if (menu.classList.contains('menu-active')) {
-      document.body.style.overflow = 'hidden';
+      closeMenu();
     } else {
-      document.body.style.overflow = '';
-      gradient.style.opacity = '0';
+      openMenu();
     }
   });
+
   menu.querySelectorAll('a').forEach(link => {
     link.addEventListener('click', function() {
-      menu.classList.remove('menu-active');
-      burger.classList.remove('burger-active');
-      gradient.style.opacity = '0';
-      gradient.style.transition = 'opacity 0.5s ease-out';
-      document.body.style.overflow = '';
+      closeMenu();
     });
   });
 }
