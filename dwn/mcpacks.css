@@ -69,7 +69,7 @@ a:link {
     gap: 1vw;
     background-color: rgba(95, 95, 95, 0.5);
     background-blend-mode: multiply;
-    height: fit-content;
+    height: 100%;
     width: 100%;
     grid-column: 2;
     justify-items: center;

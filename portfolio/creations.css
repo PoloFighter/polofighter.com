@@ -118,7 +118,6 @@ selector {
     flex-direction: column;
     font-family: "montserrat";
     transition: all 200ms ease-in-out;
-    mix-blend-mode: difference;
 }
 .burger {
     display: flex;
@@ -419,14 +418,14 @@ h1 {
     align-items: center;
 }
 .prev {
-    width: 40vw;
+    width: 30vw;
     border-radius: 25px;
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
 }
 .web-button {
     font-family: Monument Extended;
     background: var(--light);
-    font-size: 3vmax;
+    font-size: 1vmax;
     padding: 2vw;
     transition: 100ms ease-in-out;
     border-radius: 25px;
