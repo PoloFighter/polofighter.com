@@ -646,3 +646,170 @@ h1 {
     grid-row: 2;
     border-radius: 1em;
 }
+
+/* --- Overlay animation classes --- */
+.anim-fade {
+    animation: pf-fade-in 280ms ease-out;
+}
+.anim-zoom {
+    animation: pf-zoom-in 300ms cubic-bezier(.2,.9,.2,1);
+}
+.anim-slide-right {
+    animation: pf-slide-in-right 300ms cubic-bezier(.2,.9,.2,1);
+}
+.anim-slide-left {
+    animation: pf-slide-in-left 300ms cubic-bezier(.2,.9,.2,1);
+}
+
+@keyframes pf-fade-in {
+    from { opacity: 0; transform: translateY(6px) scale(0.995); }
+    to { opacity: 1; transform: translateY(0) scale(1); }
+}
+@keyframes pf-zoom-in {
+    from { opacity: 0; transform: scale(0.92); }
+    to { opacity: 1; transform: scale(1); }
+}
+@keyframes pf-slide-in-right {
+    from { opacity: 0; transform: translateX(24px) scale(0.99); }
+    to { opacity: 1; transform: translateX(0) scale(1); }
+}
+@keyframes pf-slide-in-left {
+    from { opacity: 0; transform: translateX(-24px) scale(0.99); }
+    to { opacity: 1; transform: translateX(0) scale(1); }
+}
+
+/* overlay arrows and counter */
+.overlay-arrow {
+    position: absolute; /* position relative to the overlay so arrows align with centered media */
+    top: 50%;
+    transform: translateY(-50%);
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    border: none;
+    background: rgba(0,0,0,0.28);
+    color: #fff;
+    font-size: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 10003;
+    transition: background .12s ease, transform .08s ease;
+}
+.overlay-arrow:hover { background: rgba(255,255,255,0.12); transform: translateY(-50%) scale(1.05); }
+.overlay-arrow:active { transform: translateY(-50%) scale(0.98); }
+.overlay-arrow-left { left: 18px; }
+.overlay-arrow-right { right: 18px; }
+.overlay-counter {
+    position: fixed;
+    top: 12px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10002;
+}
+
+/* overlay close button */
+.overlay-close {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    z-index: 10005;
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    border: none;
+    background: rgba(0,0,0,0.32);
+    color: #fff;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+.overlay-close:hover { background: rgba(255,255,255,0.08); }
+
+/* pagination dots and colors from :root */
+.overlay-dots {
+    position: fixed;
+    bottom: 18px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10004;
+    width: auto;
+    display: flex;
+    justify-content: center;
+    pointer-events: auto;
+}
+.overlay-dots-inner {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    padding: 6px 12px;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    white-space: nowrap; /* prevent wrapping which can stretch items */
+}
+.overlay-dots-inner::-webkit-scrollbar { display: none; }
+.overlay-dots-inner { scrollbar-width: none; -ms-overflow-style: none; }
+.overlay-dot {
+    width: 12px;
+    height: 12px;
+    min-width: 12px;
+    min-height: 12px;
+    border-radius: 50%;
+    border: none;
+    background: var(--mid-dark);
+    opacity: 0.95;
+    cursor: pointer;
+    /* No transitions or animations for dots (hover and active changes are instantaneous). */
+    transition: none;
+    display: inline-flex; /* avoid flex children stretching */
+    flex: 0 0 12px;
+    padding: 0;
+    margin: 0;
+}
+.overlay-dot:hover {
+    /* No animated transform — change background instantly on hover only. */
+    background: var(--mid-light);
+    opacity: 1;
+}
+.overlay-dot.active {
+    background: var(--light);
+    box-shadow: 0 0 14px 4px rgba(228,58,87,0.14), 0 0 30px rgba(228,58,87,0.22);
+}
+
+/* arrow image inside button */
+.overlay-arrow-img {
+    width: 56%;
+    height: 56%;
+    object-fit: contain;
+    display: block;
+    pointer-events: none; /* clicks handled by button */
+}
+
+/* mobile: move overlay arrows below center */
+@media (max-aspect-ratio: 5/6) {
+        .overlay-arrow {
+                top: auto !important; 
+                transform: none !important;
+                bottom: 80px !important;
+                width: 56px;
+                height: 56px;
+                font-size: 28px;
+        }
+        .overlay-arrow-left {
+                left: calc(50% - 70px) !important;
+                right: auto !important;
+        }
+        .overlay-arrow-right {
+                left: calc(50% + 14px) !important;
+                right: auto !important;
+        }
+        .overlay-dots {
+                display: hidden;
+                opacity: 0;
+        }
+        .overlay-arrow:hover { transform: none !important; }
+        .overlay-arrow:active { transform: none !important; }
+}
