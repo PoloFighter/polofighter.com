@@ -189,7 +189,7 @@ selector {
 .menu .item {
     opacity: 0;
     transform: translateX(-40px);
-    transition: opacity 0.4s cubic-bezier(0.4,0,0.2,1), transform 0.4s cubic-bezier(0.4,0,0.2,1);
+    transition: all 0.4s cubic-bezier(0.4,0,0.2,1), transform 0.4s cubic-bezier(0.4,0,0.2,1);
 }
 .menu.menu-active .item {
     opacity: 1;
@@ -204,6 +204,10 @@ selector {
 .menu.menu-active .item:nth-child(7) { transition-delay: 300ms; }
 .menu.menu-active .item:nth-child(8) { transition-delay: 350ms; }
 .menu.menu-active .item:nth-child(9) { transition-delay: 400ms; }
+
+/* After a short timeout JS will add the .menu-opened class to disable staggered delays
+   for subsequent interactions. Use !important so this override wins over nth-child rules. */
+.menu.menu-active.menu-opened .item { transition-delay: 0ms !important; }
 
 .video-container {
     position: fixed;

@@ -489,6 +489,12 @@ const burger = document.querySelector('.burger');
 const menu = document.querySelector('.menu');
 const gradient = document.querySelector('.gradient') || document.getElementById('gradient') || document.querySelector('gradient');
 
+// When opening the menu we want the items to animate in a staggered fashion briefly,
+// then after a short wait disable those per-item delays so subsequent interactions
+// aren't delayed. We manage that by adding/removing the `menu-opened` class.
+let menuOpenedTimeoutId = null;
+const MENU_OPENED_DELAY = 160; // ms to wait before disabling staggered delays
+
 if (burger && menu && gradient) {
   // Ensure gradient is hidden initially
   gradient.style.opacity = '0';
@@ -496,15 +502,34 @@ if (burger && menu && gradient) {
   gradient.style.pointerEvents = 'none';
 
   function openMenu() {
+    // ensure any previous opened flag/timeout is cleared so we re-run the stagger
+    if (menuOpenedTimeoutId) {
+      clearTimeout(menuOpenedTimeoutId);
+      menuOpenedTimeoutId = null;
+    }
+    menu.classList.remove('menu-opened');
     menu.classList.add('menu-active');
     burger.classList.add('burger-active');
     gradient.classList.add('gradient-active');
     gradient.style.opacity = '1';
     gradient.style.pointerEvents = 'auto';
     document.body.style.overflow = 'hidden';
+
+    // after a short wait, disable the per-item stagger delays by adding .menu-opened
+    menuOpenedTimeoutId = setTimeout(() => {
+      menu.classList.add('menu-opened');
+      menuOpenedTimeoutId = null;
+    }, MENU_OPENED_DELAY);
   }
 
   function closeMenu() {
+    // If we're closing, cancel the pending timeout and remove the opened flag so
+    // the closing animation uses the stagger delays.
+    if (menuOpenedTimeoutId) {
+      clearTimeout(menuOpenedTimeoutId);
+      menuOpenedTimeoutId = null;
+    }
+    menu.classList.remove('menu-opened');
     menu.classList.remove('menu-active');
     burger.classList.remove('burger-active');
     gradient.style.opacity = '0';
@@ -519,6 +544,7 @@ if (burger && menu && gradient) {
   burger.addEventListener('click', function() {
     if (menu.classList.contains('menu-active')) {
       closeMenu();
+      
     } else {
       openMenu();
     }
