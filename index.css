@@ -41,13 +41,13 @@ a {
   opacity: 100%;
 }
 .menu {
-  position: fixed;
-  padding: 2.5vw;
+  margin: 2vw;
+  padding: 4vw;
+  border-radius: 100px;
   background-color: rgba(29, 17, 37,0.85);
   top: 0;
   z-index: 20;
-  height: max-content;
-  width: 100vw;
+  height: 15vh;
   box-sizing: border-box;
   display: flex;
   justify-content: space-between;
@@ -101,7 +101,7 @@ a {
 .nadpis {
   z-index: 10;
   position: relative;
-  height: 100vh;
+  margin-top: 25vh;
   width: 100vw;
   display: flex;
   justify-content: center;
@@ -141,7 +141,9 @@ header {
     grid-template-rows: repeat(4, 1fr);
     grid-column-gap: 3vw;
     grid-row-gap: 3vw;
-    padding: 3vw; 
+    padding: 5vw; 
+    border-radius: 50px;
+    height: max-content;
   } 
   .logo {
     width: 10vh;

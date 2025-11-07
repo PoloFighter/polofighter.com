@@ -420,6 +420,62 @@ function initFullscreenGallery() {
     if (e.key === 'ArrowRight') { e.preventDefault(); nextMedia(); }
     if (e.key === 'ArrowLeft') { e.preventDefault(); prevMedia(); }
   });
+
+  // Enable swipe gestures on the overlay for mobile: left swipe = next, right swipe = prev
+  // Ignore swipes that start on UI controls (arrows, close button, dots) so touches on controls still work.
+  (function enableSwipeGestures() {
+    if (!overlay) return;
+    let startX = null;
+    let startY = null;
+    let startTime = 0;
+
+    function isInUI(target) {
+      try {
+        return !!(target && (target.closest('.overlay-arrow') || target.closest('.overlay-close') || target.closest('.overlay-dot') || target.closest('#overlay-dots')));
+      } catch (e) {
+        return false;
+      }
+    }
+
+    overlay.addEventListener('touchstart', function (e) {
+      if (!window.matchMedia || !window.matchMedia('(max-width: 600px)').matches) return;
+      const t = e.touches && e.touches[0];
+      if (!t) return;
+      if (isInUI(e.target)) return; // don't start gesture when touching controls
+      startX = t.clientX;
+      startY = t.clientY;
+      startTime = Date.now();
+    }, { passive: true });
+
+    overlay.addEventListener('touchmove', function (e) {
+      // nothing to do here for now; we keep passive to avoid blocking scroll elsewhere
+    }, { passive: true });
+
+    overlay.addEventListener('touchend', function (e) {
+      if (startX === null) return;
+      const t = (e.changedTouches && e.changedTouches[0]) || null;
+      const endX = t ? t.clientX : startX;
+      const endY = t ? t.clientY : startY;
+      const dx = endX - startX;
+      const dy = endY - startY;
+      const dt = Date.now() - startTime;
+      // require a mostly-horizontal swipe, sufficient distance, and reasonable time
+      const minDistance = 40; // px
+      const maxVerticalDiff = 75; // px
+      if (Math.abs(dx) > minDistance && Math.abs(dx) > Math.abs(dy) && Math.abs(dy) < maxVerticalDiff) {
+        if (dx < 0) {
+          // left swipe -> next
+          nextMedia();
+        } else {
+          // right swipe -> prev
+          prevMedia();
+        }
+      }
+      startX = null;
+      startY = null;
+      startTime = 0;
+    }, { passive: true });
+  })();
 }
 
 // Initialize now if DOM is ready, otherwise wait for DOMContentLoaded
