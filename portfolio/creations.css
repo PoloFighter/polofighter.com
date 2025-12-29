@@ -362,6 +362,11 @@ wave {
 .webwave {
     background-image: url(../res/wave-backgrounds/waveweb.svg);
 }
+.halfblood {
+    background-image: url(../res/wave-backgrounds/waveblood.png);
+    background-size: contain;
+    background-repeat: repeat-x;
+}
 .img1 {
     grid-column: 1;
 }
@@ -549,6 +554,9 @@ h1 {
   gap: 8vw;
   padding-left: 5vw;
   padding-right: 5vw;
+}
+.hb {
+    background-color: black;
 }
 @media only screen and (max-width: 600px) {
     .websites {
