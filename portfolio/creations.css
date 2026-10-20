@@ -262,7 +262,7 @@ body {
     background-color: var(--mid-light);
     gap: 50px;
 }
-.misc, .Thumbs, .Transitions, .visuals {
+.misc, .Thumbs, .Transitions, .visuals{
     justify-items: center;
     align-items: center;
     display: grid;
@@ -271,6 +271,23 @@ body {
     gap: 8vw;
     padding-left: 5vw;
     padding-right: 5vw;
+}
+.unlinked {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    color: white;
+}
+.unlinkedmain img, .unlinkedleft img, .unlinkedright img {
+    width: 1080px;
+}
+.unlinked div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 .Transitions {
     background: var(--mid-dark);
@@ -282,6 +299,9 @@ body {
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
     width: 100%;
     height: 100%;
+    animation-name: skeleton-loading;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
 }
 /*
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -290,15 +310,28 @@ body {
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 */
-.miscbg1, .ThumbsImg, .trans, .poster, .visual, .jerseyimg {
+@keyframes skeleton-loading {
+    0% {
+        background-color: rgba(255,255,255,0.1);
+    }
+    50% {
+        background-color: rgba(255,255,255,0.5);
+    }
+    100% {
+        background-color: rgba(255,255,255,0.1);
+    }
+}
+.miscbg1, .ThumbsImg, .trans, .poster, .visual, .jerseyimg, .unliked > img {
     width: 100%;
     height: 100%;
     transition: scale .1s ease-in-out;
     border-radius: 10px;
-    background-color: #fff;
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+    animation-name: skeleton-loading;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
 }
-.miscbg:hover, .miscbg1:hover, .ThumbsImg:hover, .trans:hover, .poster:hover, .visual:hover, .jerseyimg:hover  {
+.miscbg:hover, .miscbg1:hover, .ThumbsImg:hover, .trans:hover, .poster:hover, .visual:hover, .jerseyimg:hover, .unliked > img:hover  {
     box-shadow: 10px 5px 15px rgba(0, 0, 0, 0.4);
     scale: 1.01 ;
     cursor: pointer;
