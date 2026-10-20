@@ -1,3 +1,108 @@
+const translations = {
+  en: {
+    pageTitle: 'Creations',
+    backgrounds: 'Backgrounds',
+    thumbnails: 'Thumbnails',
+    motionGraphics: 'Motion Graphics',
+    websites: 'Websites',
+    designManuals: 'Design Manuals',
+    posters: 'Posters',
+    designVisualizations: 'Design Visualizations',
+    unsorted: 'Unsorted',
+    languageToggle: 'Slovenčina',
+    switchLanguage: 'Switch language to Slovak',
+    views36k: '36k views',
+    views34k: '3,4k views',
+    galleryTip: 'Tip: Click on a picture to open gallery mode',
+    motionTitle: 'Made in 1 hour and 45 minutes',
+    websitesApps: 'Websites/Apps',
+    travelApplication: 'Travel Application',
+    open: 'OPEN',
+    openPdf: 'Open PDF',
+    manualCheezas: 'Fictional restaurant focused on pizza.',
+    manualOvercurrent: 'Fictional company making gaming peripherals and software.',
+    manualCarcare: 'Fictional company specialized in car servicing and tuning.',
+    manualPersonal: 'My personal logo manual, also available on the <a style="text-decoration: underline;" href="../dwn/">downloads</a> page.',
+    apparel: 'Apparel',
+    jersey: 'Jersey',
+    hoodie: 'Hoodie',
+    threeD: '3D',
+    projectDescription: 'This project reflects the emotions I experienced over the last year. During a difficult time, I poured them into this 3D project while listening to my favorite album, HALF BLOOD by Skybreak. It helped me when I needed it most.<br>I was also inspired by the artwork for Guilty Pleasures EP by cloudnone and directofficial. I love its vibe!<br>Made in Cinema 4D and OctaneRender.',
+    rawRender: 'Raw Render',
+    viewport: 'Viewport',
+    close: 'Close',
+    previous: 'Previous',
+    next: 'Next'
+  },
+  sk: {
+    pageTitle: 'Tvorba',
+    backgrounds: 'Pozadia',
+    thumbnails: 'Náhľady',
+    motionGraphics: 'Pohyblivá grafika',
+    websites: 'Webstránky',
+    designManuals: 'Dizajn manuály',
+    posters: 'Plagáty',
+    designVisualizations: 'Dizajnové vizualizácie',
+    unsorted: 'Ostatné',
+    languageToggle: 'English',
+    switchLanguage: 'Prepnúť jazyk na angličtinu',
+    views36k: '36-tisíc zhliadnutí',
+    views34k: '3,4 tisíca zhliadnutí',
+    galleryTip: 'Tip: Klikni na obrázok a otvorí sa galéria',
+    motionTitle: 'Vyrobené za 1 hodinu a 45 minút',
+    websitesApps: 'Webstránky/aplikácie',
+    travelApplication: 'Cestovateľská aplikácia',
+    open: 'OTVORIŤ',
+    openPdf: 'Otvor PDF',
+    manualCheezas: 'Fiktívna reštaurácia špecializovaná na pizzu.',
+    manualOvercurrent: 'Fiktívna firma vyrábajúca herné periférie a softvér.',
+    manualCarcare: 'Fiktívna firma špecializovaná na servis a tuning áut.',
+    manualPersonal: 'Môj osobný logomanuál, dostupný aj na stránke <a style="text-decoration: underline;" href="../dwn/">na stiahnutie</a>.',
+    apparel: 'Oblečenie',
+    jersey: 'Dres',
+    hoodie: 'Mikina',
+    threeD: '3D',
+    projectDescription: 'Tento projekt zachytáva moje pocity z uplynulého roka. Keď mi bolo naozaj ťažko, vložil som ich do tohto 3D projektu a počúval svoj obľúbený album HALF BLOOD od Skybreak. Pomohol mi, keď som to najviac potreboval.<br>Inšpiroval som sa aj obalom EP Guilty Pleasures od cloudnone a directofficial. Milujem jeho atmosféru!<br>Vytvorené v Cinema 4D a OctaneRender.',
+    rawRender: 'Neupravený render',
+    viewport: 'Pracovné prostredie',
+    close: 'Zavrieť',
+    previous: 'Predchádzajúce',
+    next: 'Ďalšie'
+  }
+};
+
+const languageToggle = document.querySelector('.language-toggle');
+let currentLanguage = localStorage.getItem('creations-language') === 'sk' ? 'sk' : 'en';
+
+function applyLanguage(language) {
+  currentLanguage = language;
+  const strings = translations[language];
+  document.documentElement.lang = language;
+
+  document.querySelectorAll('[data-i18n]').forEach((element) => {
+    element.textContent = strings[element.dataset.i18n];
+  });
+  document.querySelectorAll('[data-i18n-html]').forEach((element) => {
+    element.innerHTML = strings[element.dataset.i18nHtml];
+  });
+  document.querySelectorAll('[data-i18n-title]').forEach((element) => {
+    element.title = strings[element.dataset.i18nTitle];
+  });
+  if (languageToggle) {
+    languageToggle.setAttribute('aria-label', strings.switchLanguage);
+  }
+  document.title = strings.pageTitle;
+  localStorage.setItem('creations-language', language);
+}
+
+if (languageToggle) {
+  languageToggle.addEventListener('click', () => {
+    applyLanguage(currentLanguage === 'en' ? 'sk' : 'en');
+  });
+}
+
+applyLanguage(currentLanguage);
+
 const logo = document.getElementById('logo');
 if (logo) {
   logo.addEventListener('click', () => {
@@ -148,7 +253,7 @@ function initFullscreenGallery() {
     if (leftImgSrc) {
       const img = document.createElement('img');
       img.src = leftImgSrc;
-      img.alt = 'Previous';
+      img.alt = translations[currentLanguage].previous;
       img.className = 'overlay-arrow-img overlay-arrow-img-left';
       prevBtn.appendChild(img);
     } else {
@@ -157,7 +262,7 @@ function initFullscreenGallery() {
     if (rightImgSrc) {
       const img = document.createElement('img');
       img.src = rightImgSrc;
-      img.alt = 'Next';
+      img.alt = translations[currentLanguage].next;
       img.className = 'overlay-arrow-img overlay-arrow-img-right';
       nextBtn.appendChild(img);
     } else {
@@ -171,7 +276,7 @@ function initFullscreenGallery() {
   const closeBtn = document.createElement('button');
   closeBtn.className = 'overlay-close';
   closeBtn.type = 'button';
-  closeBtn.title = 'Close';
+  closeBtn.title = translations[currentLanguage].close;
   closeBtn.innerHTML = '\u00D7'; // ×
   closeBtn.addEventListener('click', (e) => { e.stopPropagation(); closeOverlay(); });
   overlay.appendChild(closeBtn);
