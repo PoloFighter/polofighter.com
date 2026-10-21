@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="icon" type="image/x-icon" href="../res/images/PF LOGO halloween.png" />
-    <title>Creations</title>
+    <title data-i18n="pageTitle">Creations</title>
     <link rel="stylesheet" href="creations.css" />
     <link
       rel="icon"
@@ -49,23 +49,26 @@
         <div class="burger3"></div>
       </div>
       <div class="menu">
-      <a draggable="false" href="#bg" class="item"><p></p>Backgrounds</a>
-      <a draggable="false" href="#th" class="item"><p></p>Thumbnails</a>
-      <a draggable="false" href="#mg" class="item"><p></p>Motion Graphics</a>
-      <a draggable="false" href="#web" class="item"><p></p>Websites</a>
-      <a draggable="false" href="#dm" class="item"><p></p>Design Manuals</a>
-      <a draggable="false" href="#po" class="item"><p></p>Posters</a>
-      <a draggable="false" href="#dv" class="item"><p></p>Design Visualizations</a>
-      <a draggable="false" href="#un" class="item"><p></p>Unsorted</a>
+      <a draggable="false" href="#bg" class="item"><p></p><span data-i18n="backgrounds">Backgrounds</span></a>
+      <a draggable="false" href="#th" class="item"><p></p><span data-i18n="thumbnails">Thumbnails</span></a>
+      <a draggable="false" href="#mg" class="item"><p></p><span data-i18n="motionGraphics">Motion Graphics</span></a>
+      <a draggable="false" href="#web" class="item"><p></p><span data-i18n="websites">Websites</span></a>
+      <a draggable="false" href="#dm" class="item"><p></p><span data-i18n="designManuals">Design Manuals</span></a>
+      <a draggable="false" href="#po" class="item"><p></p><span data-i18n="posters">Posters</span></a>
+      <a draggable="false" href="#dv" class="item"><p></p><span data-i18n="designVisualizations">Design Visualizations</span></a>
+      <a draggable="false" href="#un" class="item"><p></p><span data-i18n="unsorted">Unsorted</span></a>
+      <button type="button" class="item language-toggle" aria-label="Switch language to Slovak">
+        <p></p><span data-i18n="languageToggle">Slovenčina</span>
+      </button>
       </div>
     </selector>
     <div class="content">
       <section>
         <wave class="miscwave" id="bg">
-          <h1 class="header hidden" id="mischeaders">Backgrounds</h1>
+          <h1 class="header hidden" id="mischeaders" data-i18n="backgrounds">Backgrounds</h1>
         </wave>
         <div class="misc" id="misc">
-          <h1 style="text-align: left;">Tip: Click on a picture to open gallery mode<br>Tip: Klikni na obrázok aby si otvoril galériu</h1>
+          <h1 style="text-align: left;" data-i18n-html="galleryTip">Tip: Click on a picture to open gallery mode</h1>
           <img
             src="../res/images/misc/16to9v1.png"
             class="miscbg misc1"
@@ -86,53 +89,47 @@
             class="miscbg misc4"
             
           />
-          <img src="../res/images/misc/final.png" class="miscbg1 misc5" class="misc5" />
+          <img src="../res/images/misc/final.png" class="miscbg1 misc5" />
         </div>
       </section>
       <section class="content-thumbnails">
         <wave class="thumbwave" id="th">
-          <h1 class="header hidden" id="ThumbHeader">Thumbnails</h1>
+          <h1 class="header hidden" id="ThumbHeader" data-i18n="thumbnails">Thumbnails</h1>
         </wave>
         <div class="Thumbs" id="Thumbs">
           <img
             src="../res/thumbs/1.jpg"
             class="ThumbsImg"
-            class="img1"
             id="img1"
             
           />
           <img
             src="../res/thumbs/2.jpg"
             class="ThumbsImg"
-            class="img2"
             id="img2"
             
           />
           <img
             src="../res/thumbs/3.jpg"
             class="ThumbsImg"
-            class="img3"
             id="img3"
             
           />
           <img
             src="../res/thumbs/4.jpg"
             class="ThumbsImg"
-            class="img4"
             id="img4"
             
           />
           <img
             src="../res/thumbs/5.jpg"
             class="ThumbsImg"
-            class="img5"
             id="img5"
             
           />
           <img
             src="../res/thumbs/6.jpg"
             class="ThumbsImg"
-            class="img6"
             id="img6"
             
           />
@@ -142,7 +139,7 @@
             class="ThumbsImg"
             
           />
-          <h1>36k views</h1>
+          <h1 data-i18n="views36k">36k views</h1>
           </div>
           <div>
             <img
@@ -150,13 +147,13 @@
             class="ThumbsImg"
             
           />
-            <h1>3,4k views</h1>
+            <h1 data-i18n="views34k">3,4k views</h1>
           </div>
         </div>
       </section>
       <section class="content-mographs">
         <wave class="transwave" id="mg">
-          <h1 class="header hidden" id="TransHeader">Motion Graphics</h1>
+          <h1 class="header hidden" id="TransHeader" data-i18n="motionGraphics">Motion Graphics</h1>
         </wave>
         <div class="Transitions" id="Transitions">
           <video
@@ -172,7 +169,7 @@
             type="video/webm"
             class="trans"
             controls
-            title="Urobené za 1 hodinu a 45 minút"
+              title="Urobené za 1 hodinu a 45 minút" data-i18n-title="motionTitle"
             src="../res/videos/Ebility - Alexej comp.webm"
             
           ></video>
@@ -214,7 +211,7 @@
         </div>
       <section>
         <wave class="webwave" id="web">
-          <h1 class="header hidden" id="scheader">Websites/Apps</h1>
+          <h1 class="header hidden" id="scheader" data-i18n="websitesApps">Websites/Apps</h1>
         </wave>
         <div class="websites" id="websites">
           <div class="website1 website">  
@@ -222,62 +219,62 @@
                   <h1>Dreamscape</h1>
                   <img class="prev" src="../res/images/dreamscape.png">
                 </div>
-                <a target="_blank" href="dreamscape/" class="web-button">OPEN</a>
+                  <a target="_blank" href="dreamscape/" class="web-button" data-i18n="open">OPEN</a>
           </div>
           <div class="website2 website"> 
               <div class="web2 web">
                 <h1>Aliase</h1>
                 <img class="prev" src="../res/images/aliase.png">
               </div>
-              <a  target="_blank"href="aliase/" class="web-button">OPEN</a>
+                <a  target="_blank"href="aliase/" class="web-button" data-i18n="open">OPEN</a>
           </div>
           <div class="website3 website">
             <div class="web3 web">
-              <h1>Travel Application</h1>
-              <img class="prev"  src="../res/images/skolka.png">
+                  <h1 data-i18n="travelApplication">Travel Application</h1>
+              <img class="prev"  src="../res/images/travel.png">
             </div>
-            <a target="_blank" href="https://www.figma.com/design/qNlonoz7P8SYqEafM91W2F/Untitled?node-id=0-1&t=JSO8m8SFh8QHee4B-1" class="web-button">OPEN</a>
+              <a target="_blank" href="https://www.figma.com/design/qNlonoz7P8SYqEafM91W2F/Untitled?node-id=0-1&t=JSO8m8SFh8QHee4B-1" class="web-button" data-i18n="open">OPEN</a>
           </div>
         </div>
       </section>
       <section>
-        <wave class="webwave dmwave" id="dm">
-          <h1 class="header hidden" id="scheader">Design Manuals</h1>
+        <wave class="webwave dmwave flipped-wave" id="dm">
+          <h1 class="header hidden" id="scheader" data-i18n="designManuals">Design Manuals</h1>
         </wave>
         <div class="designmanuals" id="designmanuals">
           <div class="manual">
             <div class="manualdescription">
               <img class="manualpreview" src="../res/thumbs/cheezas.jpg" alt="">
-              <p>SK: Fiktívna Reštaurácia, špecializovaná na Pizzu. <br>EN: Fictional Restaurant, focused on Pizza.</p>
+                <p data-i18n-html="manualCheezas">SK: Fiktívna Reštaurácia, špecializovaná na Pizzu. <br>EN: Fictional Restaurant, focused on Pizza.</p>
             </div>
-            <a class="dm-button" target="_blank" href="../res/designmanuals/cheezas.pdf">Open PDF File</a>
+            <a class="dm-button" target="_blank" href="../res/designmanuals/cheezas.pdf" data-i18n="openPdf">Open PDF File</a>
           </div>
           <div class="manual">
             <div class="manualdescription">
               <img class="manualpreview" src="../res/thumbs/overcurrent.jpg" alt="">
-              <p>SK: Fiktívna Firma na herné periférie a softvér <br>EN: Fictional Company that makes gaming hardware and software</p>
+                <p data-i18n-html="manualOvercurrent">SK: Fiktívna Firma na herné periférie a softvér <br>EN: Fictional Company that makes gaming hardware and software</p>
             </div>
-            <a class="dm-button" target="_blank"  href="../res/designmanuals/overcurrent.pdf">Open PDF File</a>
+            <a class="dm-button" target="_blank"  href="../res/designmanuals/overcurrent.pdf" data-i18n="openPdf">Open PDF File</a>
           </div>
           <div class="manual">
             <div class="manualdescription">
               <img class="manualpreview" src="../res/thumbs/carcare.jpg" alt="">
-              <p>SK: Fiktívna Firma špecializovaná na servisovanie a tuning áut <br>EN: Fictional company specialized on servicing cars.</p>
+                <p data-i18n-html="manualCarcare">SK: Fiktívna Firma špecializovaná na servisovanie a tuning áut <br>EN: Fictional company specialized on servicing cars.</p>
             </div>
-            <a class="dm-button" target="_blank"  href="../res/designmanuals/carcare.pdf">Open PDF File</a>
+            <a class="dm-button" target="_blank"  href="../res/designmanuals/carcare.pdf" data-i18n="openPdf">Open PDF File</a>
           </div>
           <div class="manual">
             <div class="manualdescription">
               <img class="manualpreview" src="../res/thumbs/polofighter.jpg" alt="">
-              <p>EN: My Personal Logomanual, also available in <a style="text-decoration: underline;" href="../dwn/">downloads</a> page <br>SK: Môj osobný logomanuál, taktiež dostupný v <a style="text-decoration: underline;" href="../dwn/">downloads</a> stránke</p>
+                <p data-i18n-html="manualPersonal">EN: My Personal Logomanual, also available in <a style="text-decoration: underline;" href="../dwn/">downloads</a> page <br>SK: Môj osobný logomanuál, taktiež dostupný v <a style="text-decoration: underline;" href="../dwn/">downloads</a> stránke</p>
             </div>
-            <a class="dm-button" target="_blank"  href="../res/designmanuals/polofighter.pdf">Open PDF File</a>
+            <a class="dm-button" target="_blank"  href="../res/designmanuals/polofighter.pdf" data-i18n="openPdf">Open PDF File</a>
           </div>
         </div>
       </section>
       <section>
-          <wave class="transwave" id="po" style="transform: rotate(180deg);">
-            <h1 class="header hidden" id="TransHeader" style="transform: rotate(180deg);">Posters</h1>
+          <wave class="transwave flipped-wave" id="po">
+            <h1 class="header hidden" id="TransHeader" data-i18n="posters">Posters</h1>
           </wave>
           <div class="posters">
             <img src="../res/images/posters/poster1.png" alt="" class="poster">
@@ -292,8 +289,8 @@
           </div>
       </section>
       <section>
-        <wave style="transform: rotate(180deg);" class="thumbwave" id="dv">
-          <h1 style="transform: rotate(180deg);" class="header hidden" id="ThumbHeader">Design Visualizations</h1>
+        <wave class="thumbwave flipped-wave" id="dv">
+          <h1 class="header hidden" id="ThumbHeader" data-i18n="designVisualizations">Design Visualizations</h1>
         </wave>
         <div class="visuals">
           <img src="../res/images/visual1.png" class="visual" alt="">
@@ -306,16 +303,42 @@
       </section>
       <section>
         <wave class="thumbwave" id="th">
-          <h1 class="header hidden" id="ThumbHeader">Apparel</h1>
+          <h1 class="header hidden" id="ThumbHeader" data-i18n="apparel">Apparel</h1>
         </wave>
         <div class="Apparel">
-          <h1 class="jerseytitle">Dres/Jersey</h1>
+          <h1 class="jerseytitle" data-i18n="jersey">Dres/Jersey</h1>
           <div class="jersey">
             <img class="jerseyimg"src="../res/images/dresfront.png" alt="">
             <img class="jerseyimg"src="../res/images/dresback.png" alt="">
-            <img class="jerseyimg"src="" alt="">
+            <img class="jerseyimg"src="../res/images/dresplan.png" alt="">
           </div>
+          
         </div>
+        <section class="hb">
+        <wave class="halfblood" id="hb"></wave>
+          <h1 class="jerseytitle" data-i18n="hoodie">Mikina/Hoodie</h1>
+            <div class="hoodie">
+              <img class="jerseyimg" src="/res/images/Mikinafront.png" alt="">
+              <img class="jerseyimg" src="/res/images/Mikinaback.png" alt="">
+              <img class="jerseyimg" src="/res/images/mikinahalfblood.png" alt="">
+            </div>
+          <h1 class="header hidden" data-i18n="threeD">3D</h1>
+          <div class="unlinked">
+            <div class="unlinkedmain">
+              <img src="../res/images/unlinked.png"  alt="">
+              <p data-i18n-html="projectDescription">this is the result of my emotions of the last year. When it was really bad, I poured it into this "3D Project" while listening to my favorite album HALF BLOOD by Skybreak It helped me a lot when I needed it the most.<br>I was also inspired by Guilty Pleasures EP artwork by cloudnone and directofficial . I love the vibe of it! <br> Made in cinema4d and octanerender</p>
+            </div>
+            <div class="unlinkedleft">
+              <h1 data-i18n="rawRender">Raw Render</h1>
+              <img  src="../res/images/render psd.png" alt="">
+            </div>
+            <div class="unlinkedright">
+              <h1 data-i18n="viewport">Viewport</h1>
+              <img  src="../res/images/3d3.png"  alt="">
+            </div>
+
+
+        </section>
       </section>
     </div>
     <div>

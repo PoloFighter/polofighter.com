@@ -164,6 +164,13 @@ selector {
     align-items: center;
     white-space: nowrap;
 }
+.language-toggle {
+    padding: 0;
+    border: 0;
+    background: none;
+    font-family: inherit;
+    cursor: pointer;
+}
 .item:hover {
     font-weight: 800;
     color: rgb(239, 185, 255);
@@ -260,9 +267,8 @@ body {
 }
 .Thumbs {
     background-color: var(--mid-light);
-    gap: 50px;
 }
-.misc, .Thumbs, .Transitions, .visuals {
+.misc, .Thumbs, .Transitions, .visuals, .posters, .jersey, .hoodie {
     justify-items: center;
     align-items: center;
     display: grid;
@@ -271,6 +277,29 @@ body {
     gap: 8vw;
     padding-left: 5vw;
     padding-right: 5vw;
+}
+.unlinked {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    color: white;
+}
+.unlinked > div {
+    width: min(100%, 1080px);
+}
+.unlinkedmain img, .unlinkedleft img, .unlinkedright img {
+    width: 100%;
+    max-width: 1080px;
+    height: auto;
+}
+.unlinked div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 .Transitions {
     background: var(--mid-dark);
@@ -282,6 +311,9 @@ body {
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
     width: 100%;
     height: 100%;
+    animation-name: skeleton-loading;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
 }
 /*
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -290,15 +322,28 @@ body {
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 */
+@keyframes skeleton-loading {
+    0% {
+        background-color: rgba(255,255,255,0.1);
+    }
+    50% {
+        background-color: rgba(255,255,255,0.5);
+    }
+    100% {
+        background-color: rgba(255,255,255,0.1);
+    }
+}
 .miscbg1, .ThumbsImg, .trans, .poster, .visual, .jerseyimg {
     width: 100%;
     height: 100%;
     transition: scale .1s ease-in-out;
     border-radius: 10px;
-    background-color: #fff;
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+    animation-name: skeleton-loading;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
 }
-.miscbg:hover, .miscbg1:hover, .ThumbsImg:hover, .trans:hover, .poster:hover, .visual:hover, .jerseyimg:hover  {
+.miscbg:hover, .miscbg1:hover, .ThumbsImg:hover, .trans:hover, .poster:hover, .visual:hover, .jerseyimg:hover {
     box-shadow: 10px 5px 15px rgba(0, 0, 0, 0.4);
     scale: 1.01 ;
     cursor: pointer;
@@ -350,6 +395,17 @@ wave {
     background-repeat: no-repeat;
     background-position-y: bottom;
 }
+wave.flipped-wave {
+    position: relative;
+}
+wave.flipped-wave::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: inherit;
+    transform: rotate(180deg);
+    pointer-events: none;
+}
 .miscwave {
     background-image: url(../res/wave-backgrounds/wavebg.svg);
 }
@@ -362,54 +418,15 @@ wave {
 .webwave {
     background-image: url(../res/wave-backgrounds/waveweb.svg);
 }
-.img1 {
-    grid-column: 1;
-}
-.img2 {
-    grid-column: 2;
-}
-.img3 {
-    grid-column: 1;
-    grid-row: 1;
-}
-.img4 {
-    grid-column: 2;
-    grid-row: 2;
-}
-.img5 {
-    grid-column: 1;
-    grid-row: 3;
-}
-.img6 {
-    grid-column: 2;
-    grid-row: 4;
+.halfblood {
+    background-image: url(../res/wave-backgrounds/waveblood.png);
+    background-size: contain;
+    background-repeat: repeat-x;
 }
 h1 {
     color: white;
     text-align: center;
     font-family: Montserrat
-}
-.trans1 {
-    grid-column: 1;    
-}
-.trans2 {
-    grid-column: 2;
-}
-.trans3 {
-    grid-row: 2;
-    grid-column: 1;
-} 
-.trans4 {
-    grid-row: 2;
-    grid-column: 2;
-}
-.trans5 {
-    grid-row: 3;
-    grid-column: 1;
-}
-.trans6 {
-    grid-row: 3;
-    grid-column: 2;
 }
 .websites {
     font-family: Montserrat;
@@ -424,7 +441,9 @@ h1 {
     display: flex;
     flex-direction: column;
     text-align: center;
-    font-size: 28pt;
+    font-size: 2.5vh;
+    align-items: center;
+    min-width: 50vw;
 }
 .web > h1 {
     margin: 5vh;
@@ -507,22 +526,8 @@ h1 {
     scale: 1.05;
     outline: 2px solid rgba(255, 255, 255, 0.5);
 }
-.dmwave {
-    transform: rotate(180deg);
-}
-.dmwave h1 {
-    transform: rotateZ(180deg);
-}
 .posters {
     background-color: var(--mid-light);
-    justify-items: center;
-  align-items: center;
-  display: grid;
-  grid-template-columns: 3fr 3fr 3fr;
-  grid-template-rows: auto auto auto;
-  gap: 8vw;
-  padding-left: 5vw;
-  padding-right: 5vw;
 }
 .visuals {
     background-color: var(--light);
@@ -538,15 +543,15 @@ h1 {
     margin-top: 50px;
     margin-bottom: 50px;
 }
-.jersey {
-    justify-items: center;
-  align-items: center;
-  display: grid; 
-  grid-template-columns: 3fr 3fr 3fr;
-  grid-template-rows: auto auto auto;
-  gap: 8vw;
-  padding-left: 5vw;
-  padding-right: 5vw;
+.jersey, .hoodie {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: auto;
+}
+.jerseyimg {
+    height: auto;
+}
+.hb {
+    background-color: black;
 }
 @media only screen and (max-width: 600px) {
     .websites {
@@ -617,40 +622,15 @@ h1 {
         font-size: 12pt;
     }
     .posters {
-        display: flex;
-        flex-direction: column;
+        display: grid;
+        grid-template-columns: auto auto;
     }
     .visuals {
-        display: flex;
-        flex-direction: column;
+        display: grid;
+        grid-template-columns: auto auto;
     }
 }
 @media (prefers-color-scheme: dark) {}
-.vid {
-    width:auto;
-    max-height: 100%;
-    max-width: 100%;
-    transition: scale .1s ease-in-out;
-    display:flex;
-    flex-direction: column;
-    gap: 2.5px;
-    align-items: center;
-}
-
-.vid1 {
-    grid-column: 1;
-    border-radius: 1em;
-}
-.vid2 {
-    grid-column: 2;
-    grid-row: 1;
-    border-radius: 1em;
-}
-.vid3 {
-    grid-row: 2;
-    border-radius: 1em;
-}
-
 /* --- Overlay animation classes --- */
 .anim-fade {
     animation: pf-fade-in 280ms ease-out;
