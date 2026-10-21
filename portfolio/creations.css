@@ -211,6 +211,8 @@ selector {
 .menu.menu-active .item:nth-child(7) { transition-delay: 300ms; }
 .menu.menu-active .item:nth-child(8) { transition-delay: 350ms; }
 .menu.menu-active .item:nth-child(9) { transition-delay: 400ms; }
+.menu.menu-active .item:nth-child(10) { transition-delay: 450ms; }
+.menu.menu-active .item:nth-child(11) { transition-delay: 500ms; }
 
 /* After a short timeout JS will add the .menu-opened class to disable staggered delays
    for subsequent interactions. Use !important so this override wins over nth-child rules. */
@@ -386,6 +388,10 @@ body {
     scale: auto;
     z-index: 10000000;
 }
+#three-d {
+    position: relative;
+    z-index: 9998;
+}
 wave {
     display: flex;
     justify-content: center;
@@ -544,7 +550,7 @@ h1 {
     margin-bottom: 50px;
 }
 .jersey, .hoodie {
-    grid-template-columns: minmax(0, 1fr);
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     grid-template-rows: auto;
 }
 .jerseyimg {
@@ -593,6 +599,9 @@ h1 {
     .misc, .Thumbs, .Transitions {
         grid-template-columns: 3fr;
         grid-template-rows: repeat(6, auto);
+    }
+    .jersey, .hoodie {
+        grid-template-columns: minmax(0, 1fr);
     }
     .misc5 {
         grid-area: unset;
