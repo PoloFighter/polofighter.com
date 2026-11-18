@@ -12,6 +12,34 @@
     --mid-light: #892F4F;
     --mid-dark: #301B3E;
     --dark: #1C1124;
+    --section-description-font-size: 2em;
+    --section-description-font-weight: 700;
+    --section-description-line-height: normal;
+    --section-description-color: white;
+    --section-description-text-align: left;
+    --section-description-padding: 0 5vw;
+    --section-description-margin-bottom: 5vw;
+    --section-description-grid-margin-bottom: -5vw;
+}
+@media only screen and (max-width: 600px) {
+    :root {
+        --section-description-font-size: 1.2em;
+        --section-description-padding: 0 5vw;
+        --section-description-margin-bottom: 10vw;
+        --section-description-grid-margin-bottom: -10vw;
+    }
+    body {
+        font-size: 14px;
+    }
+    .item {
+        font-size: 2.4vh;
+    }
+    h1 {
+        font-size: 1.5em;
+    }
+    .thumbnail-description {
+        font-size: 0.8rem;
+    }
 }
 a {
     text-decoration: none;
@@ -22,6 +50,17 @@ body {
 }
 h1 {
     font-family: Montserrat;
+}
+.section-description {
+    box-sizing: border-box;
+    width: 100%;
+    margin-bottom: var(--section-description-margin-bottom);
+    padding: var(--section-description-padding);
+    color: var(--section-description-color);
+    font-size: var(--section-description-font-size);
+    font-weight: var(--section-description-font-weight);
+    line-height: var(--section-description-line-height);
+    text-align: var(--section-description-text-align);
 }
 .gradient-active {
     position: fixed;
@@ -59,14 +98,10 @@ h1 {
     font-size: 16px;
     color: blue;
   }
-/* ===== Scrollbar CSS ===== */
-  /* Firefox */
   * {
     scrollbar-width: thin;
     scrollbar-color: #000000 #ffffff;
   }
-
-  /* Chrome, Edge, and Safari */
   *::-webkit-scrollbar {
     width: 10px;
   }
@@ -214,8 +249,6 @@ selector {
 .menu.menu-active .item:nth-child(10) { transition-delay: 450ms; }
 .menu.menu-active .item:nth-child(11) { transition-delay: 500ms; }
 
-/* After a short timeout JS will add the .menu-opened class to disable staggered delays
-   for subsequent interactions. Use !important so this override wins over nth-child rules. */
 .menu.menu-active.menu-opened .item { transition-delay: 0ms !important; }
 
 .video-container {
@@ -265,10 +298,38 @@ body {
     padding: 10px;
 }
 .misc {
-    background-color: var(--light);
+    background-color: var(--mid-light);
+}
+.misc > [data-description="backgrounds"] {
+    grid-column: 1 / -1;
+    margin-bottom: var(--section-description-grid-margin-bottom);
+}
+.Thumbs > .section-description,
+.Transitions > .section-description,
+.posters > .section-description,
+.visuals > .section-description {
+    grid-column: 1 / -1;
+    margin: 0 0 var(--section-description-grid-margin-bottom);
+    padding: 0;
 }
 .Thumbs {
-    background-color: var(--mid-light);
+    background-color: var(--light);
+}
+.thumbnail-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    min-width: 0;
+}
+.thumbnail-description {
+    width: 100%;
+    margin: 0.75em 0 0;
+    color: white;
+    font-size: 0.9rem;
+    font-weight: 500;
+    line-height: 1.4;
+    text-align: center;
 }
 .misc, .Thumbs, .Transitions, .visuals, .posters, .jersey, .hoodie {
     justify-items: center;
@@ -344,6 +405,11 @@ body {
     animation-name: skeleton-loading;
     animation-duration: 1s;
     animation-iteration-count: infinite;
+}
+.miscbg, .miscbg1 {
+    aspect-ratio: 16 / 9;
+    height: auto;
+    object-fit: cover;
 }
 .miscbg:hover, .miscbg1:hover, .ThumbsImg:hover, .trans:hover, .poster:hover, .visual:hover, .jerseyimg:hover {
     box-shadow: 10px 5px 15px rgba(0, 0, 0, 0.4);
@@ -538,6 +604,10 @@ h1 {
 .visuals {
     background-color: var(--light);
 }
+#apparel {
+    background-color: var(--mid-light);
+    background-image: none;
+}
 .Apparel {
     background-color: var(--mid-light);
     justify-items: center;
@@ -578,7 +648,7 @@ h1 {
         align-items: center;
     }
     .web-button {
-        font-size: 18pt 
+        font-size: 12pt;
     }
     .prev {
         width: 80vw;
@@ -611,10 +681,10 @@ h1 {
         gap: 10vw;
     }
     .header {
-        font-size: 24pt;
+        font-size: 20pt;
     }
     .web {
-        font-size: 18pt;
+        font-size: 14pt;
     }
     .manual {
         display: flex;
@@ -628,7 +698,7 @@ h1 {
         width: 60%;
     }
     .dm-button {
-        font-size: 12pt;
+        font-size: 10pt;
     }
     .posters {
         display: grid;
@@ -671,9 +741,8 @@ h1 {
     to { opacity: 1; transform: translateX(0) scale(1); }
 }
 
-/* overlay arrows and counter */
 .overlay-arrow {
-    position: absolute; /* position relative to the overlay so arrows align with centered media */
+    position: absolute; 
     top: 50%;
     transform: translateY(-50%);
     width: 64px;
@@ -722,7 +791,6 @@ h1 {
 }
 .overlay-close:hover { background: rgba(255,255,255,0.08); }
 
-/* pagination dots and colors from :root */
 .overlay-dots {
     position: fixed;
     bottom: 18px;
@@ -741,7 +809,7 @@ h1 {
     padding: 6px 12px;
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
-    white-space: nowrap; /* prevent wrapping which can stretch items */
+    white-space: nowrap; 
 }
 .overlay-dots-inner::-webkit-scrollbar { display: none; }
 .overlay-dots-inner { scrollbar-width: none; -ms-overflow-style: none; }
@@ -755,15 +823,13 @@ h1 {
     background: var(--mid-dark);
     opacity: 0.95;
     cursor: pointer;
-    /* No transitions or animations for dots (hover and active changes are instantaneous). */
     transition: none;
-    display: inline-flex; /* avoid flex children stretching */
+    display: inline-flex; 
     flex: 0 0 12px;
     padding: 0;
     margin: 0;
 }
 .overlay-dot:hover {
-    /* No animated transform — change background instantly on hover only. */
     background: var(--mid-light);
     opacity: 1;
 }
@@ -772,16 +838,14 @@ h1 {
     box-shadow: 0 0 14px 4px rgba(228,58,87,0.14), 0 0 30px rgba(228,58,87,0.22);
 }
 
-/* arrow image inside button */
 .overlay-arrow-img {
     width: 56%;
     height: 56%;
     object-fit: contain;
     display: block;
-    pointer-events: none; /* clicks handled by button */
+    pointer-events: none;
 }
 
-/* mobile: move overlay arrows below center */
 @media (max-aspect-ratio: 5/6) {
         .overlay-arrow {
                 top: auto !important; 
