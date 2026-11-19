@@ -49,16 +49,16 @@
         <div class="burger3"></div>
       </div>
       <div class="menu">
-      <a draggable="false" href="#bg" class="item"><p></p><span data-i18n="backgrounds">Backgrounds</span></a>
-      <a draggable="false" href="#th" class="item"><p></p><span data-i18n="thumbnails">Thumbnails</span></a>
-      <a draggable="false" href="#mg" class="item"><p></p><span data-i18n="motionGraphics">Motion Graphics</span></a>
-      <a draggable="false" href="#web" class="item"><p></p><span data-i18n="websites">Websites</span></a>
-      <a draggable="false" href="#dm" class="item"><p></p><span data-i18n="designManuals">Design Manuals</span></a>
-      <a draggable="false" href="#po" class="item"><p></p><span data-i18n="posters">Posters</span></a>
-      <a draggable="false" href="#dv" class="item"><p></p><span data-i18n="designVisualizations">Design Visualizations</span></a>
-      <a draggable="false" href="#un" class="item"><p></p><span data-i18n="unsorted">Unsorted</span></a>
-      <a draggable="false" href="#apparel" class="item"><p></p><span data-i18n="apparel">Apparel</span></a>
-      <a draggable="false" href="#three-d" class="item"><p></p><span data-i18n="threeD">3D</span></a>
+      <a draggable="false" href="#th" class="item"><p></p><span data-menu-translation="thumbnails">Thumbnails</span></a>
+      <a draggable="false" href="#bg" class="item"><p></p><span data-menu-translation="backgrounds">Backgrounds</span></a>
+      <a draggable="false" href="#mg" class="item"><p></p><span data-menu-translation="motionGraphics">Motion Graphics</span></a>
+      <a draggable="false" href="#web" class="item"><p></p><span data-menu-translation="websites">Websites</span></a>
+      <a draggable="false" href="#dm" class="item"><p></p><span data-menu-translation="designManuals">Design Manuals</span></a>
+      <a draggable="false" href="#po" class="item"><p></p><span data-menu-translation="posters">Posters</span></a>
+      <a draggable="false" href="#dv" class="item"><p></p><span data-menu-translation="designVisualizations">Design Visualizations</span></a>
+      <a draggable="false" href="#un" class="item"><p></p><span data-menu-translation="unsorted">Unsorted</span></a>
+      <a draggable="false" href="#apparel" class="item"><p></p><span data-menu-translation="apparel">Apparel</span></a>
+      <a draggable="false" href="#three-d" class="item"><p></p><span data-menu-translation="threeD">3D</span></a>
       <button type="button" class="item language-toggle" aria-label="Switch language to Slovak">
         <p></p><span data-i18n="languageToggle">Slovenčina</span>
       </button>
@@ -66,91 +66,76 @@
     </selector>
     <div class="content">
       <section>
-        <wave class="miscwave" id="bg">
+        <wave class="miscwave" id="th">
+          <h1 class="header hidden" id="ThumbHeader" data-i18n="thumbnails">Thumbnails</h1>
+        </wave>
+        <div class="Thumbs" id="Thumbs">
+          <p class="section-description" data-description="thumbnails"></p>
+          <div class="thumbnail-item">
+            <img src="../res/thumbs/first.png" class="ThumbsImg" />
+            <p class="thumbnail-description" data-thumbnail-caption="thumbnail9" hidden></p>
+          </div>
+          <div class="thumbnail-item">
+            <img src="../res/thumbs/1.jpg" class="ThumbsImg" id="img1" />
+            <p class="thumbnail-description" data-thumbnail-caption="thumbnail1" hidden></p>
+          </div>
+          <div class="thumbnail-item">
+            <img src="../res/thumbs/2.jpg" class="ThumbsImg" id="img2" />
+            <p class="thumbnail-description" data-thumbnail-caption="thumbnail2" hidden></p>
+          </div>
+          <div class="thumbnail-item">
+            <img src="../res/thumbs/3.jpg" class="ThumbsImg" id="img3" />
+            <p class="thumbnail-description" data-thumbnail-caption="thumbnail3" hidden></p>
+          </div>
+          <div class="thumbnail-item">
+            <img src="../res/thumbs/4.jpg" class="ThumbsImg" id="img4" />
+            <p class="thumbnail-description" data-thumbnail-caption="thumbnail4" hidden></p>
+          </div>
+          <div class="thumbnail-item">
+            <img src="../res/thumbs/5.jpg" class="ThumbsImg" id="img5" />
+            <p class="thumbnail-description" data-thumbnail-caption="thumbnail5" hidden></p>
+          </div>
+          <div class="thumbnail-item">
+            <img src="../res/thumbs/6.jpg" class="ThumbsImg" id="img6" />
+            <p class="thumbnail-description" data-thumbnail-caption="thumbnail6" hidden></p>
+          </div>
+          <div class="thumbnail-item">
+            <img src="../res/thumbs/7.png" class="ThumbsImg" />
+            <p class="thumbnail-description" data-thumbnail-caption="thumbnail7" hidden></p>
+          </div>
+          <div class="thumbnail-item">
+            <img src="../res/thumbs/8.png" class="ThumbsImg" />
+            <p class="thumbnail-description" data-thumbnail-caption="thumbnail8" hidden></p>
+          </div>
+        </div>
+      </section>
+      <section class="content-thumbnails">
+        <wave class="thumbwave" id="bg">
           <h1 class="header hidden" id="mischeaders" data-i18n="backgrounds">Backgrounds</h1>
         </wave>
         <div class="misc" id="misc">
-          <h1 style="text-align: left;" data-i18n-html="galleryTip">Tip: Click on a picture to open gallery mode</h1>
+          <p class="section-description" data-description="backgrounds"></p>
           <img
             src="../res/images/misc/16to9v1.png"
             class="miscbg misc1"
-            
+
           />
           <img
             src="../res/images/misc/16to9v2.png"
             class="miscbg misc2"
-            
+
           />
           <img
             src="../res/images/misc/16to9v3.png"
             class="miscbg misc3"
-            
+
           />
           <img
             src="../res/images/misc/16to9v4.png"
             class="miscbg misc4"
-            
+
           />
           <img src="../res/images/misc/final.png" class="miscbg1 misc5" />
-        </div>
-      </section>
-      <section class="content-thumbnails">
-        <wave class="thumbwave" id="th">
-          <h1 class="header hidden" id="ThumbHeader" data-i18n="thumbnails">Thumbnails</h1>
-        </wave>
-        <div class="Thumbs" id="Thumbs">
-          <img
-            src="../res/thumbs/1.jpg"
-            class="ThumbsImg"
-            id="img1"
-            
-          />
-          <img
-            src="../res/thumbs/2.jpg"
-            class="ThumbsImg"
-            id="img2"
-            
-          />
-          <img
-            src="../res/thumbs/3.jpg"
-            class="ThumbsImg"
-            id="img3"
-            
-          />
-          <img
-            src="../res/thumbs/4.jpg"
-            class="ThumbsImg"
-            id="img4"
-            
-          />
-          <img
-            src="../res/thumbs/5.jpg"
-            class="ThumbsImg"
-            id="img5"
-            
-          />
-          <img
-            src="../res/thumbs/6.jpg"
-            class="ThumbsImg"
-            id="img6"
-            
-          />
-          <div>
-            <img
-            src="../res/thumbs/7.png"
-            class="ThumbsImg"
-            
-          />
-          <h1 data-i18n="views36k">36k views</h1>
-          </div>
-          <div>
-            <img
-            src="../res/thumbs/8.png"
-            class="ThumbsImg"
-            
-          />
-            <h1 data-i18n="views34k">3,4k views</h1>
-          </div>
         </div>
       </section>
       <section class="content-mographs">
@@ -158,6 +143,7 @@
           <h1 class="header hidden" id="TransHeader" data-i18n="motionGraphics">Motion Graphics</h1>
         </wave>
         <div class="Transitions" id="Transitions">
+          <p class="section-description" data-description="motionGraphics"></p>
           <video
             src="../res/videos/n3o transition.webm"
             type="video/webm"
@@ -216,34 +202,30 @@
           <h1 class="header hidden" id="scheader" data-i18n="websitesApps">Websites/Apps</h1>
         </wave>
         <div class="websites" id="websites">
-          <div class="website1 website">  
-                <div class="web1 web">
-                  <h1>Dreamscape</h1>
-                  <img class="prev" src="../res/images/dreamscape.png">
-                </div>
-                  <a target="_blank" href="dreamscape/" class="web-button" data-i18n="open">OPEN</a>
-          </div>
-          <div class="website2 website"> 
-              <div class="web2 web">
+          <p class="section-description" data-description="websites"></p>
+
+          <div class="website1 website"> 
+              <div class="web1 web">
                 <h1>Aliase</h1>
                 <img class="prev" src="../res/images/aliase.png">
               </div>
                 <a  target="_blank"href="aliase/" class="web-button" data-i18n="open">OPEN</a>
           </div>
-          <div class="website3 website">
-            <div class="web3 web">
-                  <h1 data-i18n="travelApplication">Travel Application</h1>
-              <img class="prev"  src="../res/images/travel.png">
-            </div>
-              <a target="_blank" href="https://www.figma.com/design/qNlonoz7P8SYqEafM91W2F/Untitled?node-id=0-1&t=JSO8m8SFh8QHee4B-1" class="web-button" data-i18n="open">OPEN</a>
+            <div class="website2 website"> 
+              <div class="web2 web">
+                <h1>PoloFighter.com</h1>
+                <div data-description="personalWebsite"></div>
+              </div>
+                <a  target="_blank"href="/" class="web-button" data-i18n="open">OPEN</a>
           </div>
-        </div>
+          
       </section>
       <section>
         <wave class="webwave dmwave flipped-wave" id="dm">
           <h1 class="header hidden" id="scheader" data-i18n="designManuals">Design Manuals</h1>
         </wave>
         <div class="designmanuals" id="designmanuals">
+          <p class="section-description" data-description="designManuals"></p>
           <div class="manual">
             <div class="manualdescription">
               <img class="manualpreview" src="../res/thumbs/cheezas.jpg" alt="">
@@ -268,7 +250,9 @@
           <div class="manual">
             <div class="manualdescription">
               <img class="manualpreview" src="../res/thumbs/polofighter.jpg" alt="">
-                <p data-i18n-html="manualPersonal">EN: My Personal Logomanual, also available in <a style="text-decoration: underline;" href="../dwn/">downloads</a> page <br>SK: Môj osobný logomanuál, taktiež dostupný v <a style="text-decoration: underline;" href="../dwn/">downloads</a> stránke</p>
+              <p></p>
+              <img class="manualpreview" src="../res/images/logo-versions.png" alt="">
+              <p data-i18n-html="manualPersonal">My personal brand “PoloFighter” has a personal meaning but actually also a random one. I wanted to finally have my own nickname that does not sound like a ten-year-old made it, even though this one still sounds a bit like that. It is made up of “Polo”, which are the first 4 letters of my birth surname, and it is actually that half, which means that I split many things, I divide many things into halves, I know it like that, into halves. The second part actually has no meaning, I just thought it up while playing Idler game and making fighting games. The logo is actually a “literal” joining of the name in Gúla dopolyce and then only the “teeth” of the F. Now I have a second version which is cleaner, simpler and rounder, friendlier, minimalist, and the F was inverted in the logo. The colors also have no deeper meaning, because I like them and when I saw them, my eyes went straight to them. It is a style I like, it is my unique personal brand. Similarly, I have such a variation which is more [illegible], inspired by a building that helped me in difficult times.</p>
             </div>
             <a class="dm-button" target="_blank"  href="../res/designmanuals/polofighter.pdf" data-i18n="openPdf">Open PDF File</a>
           </div>
@@ -279,6 +263,7 @@
             <h1 class="header hidden" id="TransHeader" data-i18n="posters">Posters</h1>
           </wave>
           <div class="posters">
+            <p class="section-description" data-description="posters"></p>
             <img src="../res/images/posters/poster1.png" alt="" class="poster">
             <img src="../res/images/posters/poster2.png" alt="" class="poster">
             <img src="../res/images/posters/poster3.png" alt="" class="poster">
@@ -291,24 +276,13 @@
           </div>
       </section>
       <section>
-        <wave class="thumbwave flipped-wave" id="dv">
-          <h1 class="header hidden" id="ThumbHeader" data-i18n="designVisualizations">Design Visualizations</h1>
-        </wave>
-        <div class="visuals">
-          <img src="../res/images/visual1.png" class="visual" alt="">
-          <img src="../res/images/visual2.png" class="visual" alt="">
-          <img src="../res/images/visual3.png" class="visual" alt="">
-          <img src="../res/images/visual4.png" class="visual" alt="">
-          <img src="../res/images/visual5.png" class="visual" alt="">
-          <img src="../res/images/visual6.png" class="visual" alt="">
-        </div>
-      </section>
-      <section>
         <wave class="thumbwave" id="apparel">
           <h1 class="header hidden" id="ThumbHeader" data-i18n="apparel">Apparel</h1>
         </wave>
         <div class="Apparel">
+          <p class="section-description" data-description="apparel"></p>
           <h1 class="jerseytitle" data-i18n="jersey">Dres/Jersey</h1>
+          <p class="section-description" data-description="jersey"></p>
           <div class="jersey">
             <img class="jerseyimg"src="../res/images/dresfront.png" alt="">
             <img class="jerseyimg"src="../res/images/dresback.png" alt="">
@@ -319,12 +293,14 @@
         <section class="hb">
         <wave class="halfblood" id="hb"></wave>
           <h1 class="jerseytitle" data-i18n="hoodie">Mikina/Hoodie</h1>
+          <p class="section-description" data-description="hoodie"></p>
             <div class="hoodie">
               <img class="jerseyimg" src="/res/images/Mikinafront.png" alt="">
               <img class="jerseyimg" src="/res/images/Mikinaback.png" alt="">
               <img class="jerseyimg" src="/res/images/mikinahalfblood.png" alt="">
             </div>
           <h1 class="header hidden" id="three-d" data-i18n="threeD">3D</h1>
+          <p class="section-description" data-description="threeD"></p>
           <div class="unlinked">
             <div class="unlinkedmain">
               <img src="../res/images/unlinked.png"  alt="">

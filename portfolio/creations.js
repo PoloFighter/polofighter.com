@@ -11,9 +11,6 @@ const translations = {
     unsorted: 'Unsorted',
     languageToggle: 'Slovenčina',
     switchLanguage: 'Switch language to Slovak',
-    views36k: '36k views',
-    views34k: '3,4k views',
-    galleryTip: 'Tip: Click on a picture to open gallery mode',
     motionTitle: 'Made in 1 hour and 45 minutes',
     websitesApps: 'Websites/Apps',
     travelApplication: 'Travel Application',
@@ -22,7 +19,7 @@ const translations = {
     manualCheezas: 'Fictional restaurant focused on pizza.',
     manualOvercurrent: 'Fictional company making gaming peripherals and software.',
     manualCarcare: 'Fictional company specialized in car servicing and tuning.',
-    manualPersonal: 'My personal logo manual, also available on the <a style="text-decoration: underline;" href="../dwn/">downloads</a> page.',
+    manualPersonal: 'My personal brand, “PoloFighter,” has a personal meaning, but it’s actually a bit of a coincidence. I wanted to finally have a nickname of my own that didn’t sound like it was made up by a 10-year-old—even though this one still sounds a little bit like that. It’s made up of “Polo,” which are the first four letters of my birth surname, and it actually represents “half”—meaning that I do a lot of things, discover a lot of things, but I only know about half of them. The second part doesn’t really have any meaning; I just came up with it while playing laser tag, and I love playing combat games. The logo is basically a “literal” combination of the name “Guľa” split in half, followed by those “teeth” of the letter “F.” Now I have a second version that’s cleaner, simpler, and rounder; the first version had sharp angles and edges, and the “F” was inverted within that semicircle. The colors don’t have any deeper meaning either—I just like them, and when I saw them, my eyes were immediately drawn to them. It’s a style I like; it’s my unique personal brand. I have a similar variation that’s more artistic and personal—inspired by music that helped me through tough times.',
     apparel: 'Apparel',
     jersey: 'Jersey',
     hoodie: 'Hoodie',
@@ -46,9 +43,6 @@ const translations = {
     unsorted: 'Ostatné',
     languageToggle: 'English',
     switchLanguage: 'Prepnúť jazyk na angličtinu',
-    views36k: '36-tisíc zhliadnutí',
-    views34k: '3,4 tisíca zhliadnutí',
-    galleryTip: 'Tip: Klikni na obrázok a otvorí sa galéria',
     motionTitle: 'Vyrobené za 1 hodinu a 45 minút',
     websitesApps: 'Webstránky/aplikácie',
     travelApplication: 'Cestovateľská aplikácia',
@@ -57,7 +51,7 @@ const translations = {
     manualCheezas: 'Fiktívna reštaurácia špecializovaná na pizzu.',
     manualOvercurrent: 'Fiktívna firma vyrábajúca herné periférie a softvér.',
     manualCarcare: 'Fiktívna firma špecializovaná na servis a tuning áut.',
-    manualPersonal: 'Môj osobný logomanuál, dostupný aj na stránke <a style="text-decoration: underline;" href="../dwn/">na stiahnutie</a>.',
+    manualPersonal: 'Môj osobný brand „PoloFighter“ má osobný zmysel ale vlastne aj náhodný. Chcel som mať konečne nejakú vlastnú prezývku ktorá neznie ako keby ju robil 10 ročný aj keď táto stále tak trošku znie. Je zložená z „Polo“ čo sú prvé 4 písmená z môjho rodného priezviska a je to vlastne tá polovica, čo znamená že robím veľa vecí, veľa vecí objavujem ale všetky viem tak na tú polovicu. Druhá časť vlastne nemá žiadny význam, len som to vymýšľal pri laser game a rád hrám bojové hry. Logo je vlastne „doslovné“ spojenie názvu Guľa do polovice a potom už iba tie „zuby“ Fka. Teraz mám druhú verziu ktorá je čistejšia, jednoduchšia a viac oblá, prvá verzia mala ostré uhly a hrany a to Fko bolo invertnuté v tom polkruhu. Farby tiež nemajú hlbší význam, proste sa mi páčia a keď som ich videl, hneď mi oči išli na ne. Je to štýl ktorý sa mi páči, je to moja unikátna osobná značka. Podobnú mám takú variáciu ktorá je viac umelecká a o mne, inšpirovaná hudbou ktorá mi v ťažkých chvíľach pomohla.',
     apparel: 'Oblečenie',
     jersey: 'Dres',
     hoodie: 'Mikina',
@@ -73,6 +67,7 @@ const translations = {
 
 const languageToggle = document.querySelector('.language-toggle');
 let currentLanguage = localStorage.getItem('creations-language') === 'sk' ? 'sk' : 'en';
+let descriptions = null;
 
 function applyLanguage(language) {
   currentLanguage = language;
@@ -88,6 +83,19 @@ function applyLanguage(language) {
   document.querySelectorAll('[data-i18n-title]').forEach((element) => {
     element.title = strings[element.dataset.i18nTitle];
   });
+  if (descriptions) {
+    document.querySelectorAll('[data-menu-translation]').forEach((element) => {
+      element.textContent = descriptions.menu[element.dataset.menuTranslation][language];
+    });
+    document.querySelectorAll('[data-description]').forEach((element) => {
+      element.textContent = descriptions[element.dataset.description][language];
+    });
+    document.querySelectorAll('[data-thumbnail-caption]').forEach((element) => {
+      const caption = descriptions.thumbnailCaptions[element.dataset.thumbnailCaption][language];
+      element.textContent = caption;
+      element.hidden = caption.length === 0;
+    });
+  }
   if (languageToggle) {
     languageToggle.setAttribute('aria-label', strings.switchLanguage);
   }
@@ -102,6 +110,43 @@ if (languageToggle) {
 }
 
 applyLanguage(currentLanguage);
+
+fetch('./descriptions.json')
+  .then((response) => {
+    if (!response.ok) {
+      throw new Error(`HTTP ${response.status}`);
+    }
+    return response.json();
+  })
+  .then((loadedDescriptions) => {
+    const menuElements = document.querySelectorAll('[data-menu-translation]');
+    menuElements.forEach((element) => {
+      const translation = loadedDescriptions.menu && loadedDescriptions.menu[element.dataset.menuTranslation];
+      if (!translation || typeof translation.en !== 'string' || typeof translation.sk !== 'string') {
+        throw new Error(`Missing English or Slovak menu text for "${element.dataset.menuTranslation}"`);
+      }
+    });
+    document.querySelectorAll('[data-description]').forEach((element) => {
+      const description = loadedDescriptions[element.dataset.description];
+      if (!description || typeof description.en !== 'string' || typeof description.sk !== 'string') {
+        throw new Error(`Missing English or Slovak text for "${element.dataset.description}"`);
+      }
+    });
+    const captions = loadedDescriptions.thumbnailCaptions;
+    const captionElements = document.querySelectorAll('[data-thumbnail-caption]');
+    captionElements.forEach((element) => {
+      const key = element.dataset.thumbnailCaption;
+      const caption = captions && captions[key];
+      if (!caption || typeof caption.en !== 'string' || typeof caption.sk !== 'string') {
+        throw new Error(`Missing English or Slovak text for "${key}"`);
+      }
+    });
+    descriptions = loadedDescriptions;
+    applyLanguage(currentLanguage);
+  })
+  .catch((error) => {
+    console.error('Failed to load portfolio descriptions from descriptions.json:', error);
+  });
 
 const logo = document.getElementById('logo');
 if (logo) {
